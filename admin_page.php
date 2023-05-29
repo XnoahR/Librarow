@@ -15,14 +15,14 @@
     <!--Navbar-->
     <nav class="navbar sticky-top navbar-expand-sm navbar-dark" style="color: #D0EFFF;">
         <div class="container-fluid ">
-            <a class="navbar-brand " href="#">LIBRAROW</a>
+            <a class="navbar-brand " href="login.php">LIBRAROW</a>
             <div class="nav navbar-custom" id="navbarSupportedContent" style="color: #D0EFFF !important;">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#admin_page.php">Home</a>
+                        <a class="nav-link" href="admin_page.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#profile_pustakawan.php">Profile</a>
+                        <a class="nav-link" href="profile_pustakawan.php">Profile</a>
                     </li>
                 </ul>
             </div>
@@ -37,28 +37,34 @@
                 <img src="img/mahasiswa.png" width="145" height="200">
             </div>
             <div class="booktitle">DATA MAHASISWA</div>
-            <div class="bookcenter"><button class="button1">Borrow</button></div>    
+            <div class="bookcenter"><button class="button1">Klik</button></div>    
         </div>
         <div class="bookcontainer">
             <div class="bookcenter">
                 <img src="img/pustakawan.png" width="145" height="200">
             </div>
             <div class="booktitle">PUSTAKAWAN</div>
-            <div class="bookcenter"><button class="button1">Borrow</button></div>
+            <div class="bookcenter"><button class="button1">Klik</button></div>
         </div>
         <div class="bookcontainer">
             <div class="bookcenter">
                 <img src="img/book.png" width="145" height="200">
             </div>
             <div class="booktitle">DATA BUKU</div>
-            <div class="bookcenter"><button class="button1">Borrow</button></div>
+            <div class="bookcenter"><button class="button1">Klik</button></div>
         </div>
         <div class="bookcontainer">
             <div class="bookcenter">
                 <img src="img/notifikasi.png" width="145" height="200">
             </div>
             <div class="booktitle">NOTIFIKASI</div>
-            <div class="bookcenter"><button class="button1">Borrow</button></div>
+            <div class="bookcenter">
+                <button class="button1">
+                    <a href="notifikasi_pustakawan.php" style="color: white;">
+                        Klik
+                    </a>
+                </button>
+            </div>
         </div>
     </div>
 </body>

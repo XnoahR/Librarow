@@ -1,0 +1,38 @@
+@font-face {
+    font-family: Title;
+    src: url(/font/lilita-one.regular.ttf);
+}
+
+body{
+    background-color:darkblue;
+}
+
+.navbar{
+    min-height: 100px;
+    background-image: linear-gradient(to right,#1167B1,#2A9DF4,#1167B1);
+}
+
+.navbar-brand{
+    text-align: left;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: Title !important;
+    color: #D0EFFF !important;
+}
+
+.navbar-brand, .navbar-custom {
+    text-align: left;
+    font-weight: bold;
+    font-family: Title !important;
+    color: #D0EFFF !important;
+}
+
+.content {
+    width: 100%;
+    height: 10vh;
+    margin-top: 1px;
+    background-color: rgb(26, 255, 0);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
