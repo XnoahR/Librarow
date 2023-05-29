@@ -80,3 +80,53 @@
     text-decoration: none;
     color: white;
 }
+
+                               /* Data */
+/* /////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////// */
+
+.datacontainer{
+    width: 90%;
+    height: 90vh;
+    background-color: white;
+    margin: auto;
+    margin-top: 2%;
+    border-radius: 30px;
+}
+
+.datacontainer .datatitle{
+    width: 95%;
+    height: 5%;
+    margin-top: 2%;
+    border-bottom: 2px solid #2A9DF4;
+    margin: auto;
+    color: #3E61CC;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.datacontainer .datasearch{
+    width: 95%;
+    height: 5%;
+    border-bottom:2px solid #2A9DF4;
+    margin: auto;
+    margin-bottom: 1%;
+}
+
+.datacontainer table, th, td {
+    border: 1px solid #114FEE;
+    text-align: center;
+  }
+
+  .datacontainer a{
+    margin-left: 3%;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .datacontainer th{
+    background-color: #2A9DF4;
+  }

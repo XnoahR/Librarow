@@ -35,7 +35,7 @@
 
     <div class="pucontainer">
         <div class="pupict">
-            <img src="img/stevejob.png" alt="">
+            <img src="img/orang.png" alt="">
         </div>
         <div class="puinfocon">
             <div class="puinfo">
@@ -80,7 +80,7 @@
         </div>
         <div class="pubar">
             <div class="putextcon">
-                <div class="putitle">Enail</div>
+                <div class="putitle">Email</div>
                 <div class="puins">rio.ae23@student.uns.ac.id</div>
             </div>
             <div class="pueditcon">
