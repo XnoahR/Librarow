@@ -35,44 +35,50 @@
 
     <div class="container-fluid catbox">
       <div class="cattitle">CATEGORIES</div>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
+        <div class="catshelf">
+            <div class="bookframe">
+                <img src="img/stevejob.png" alt="">
+            </div>
+            <div class="booktitle">Book</div>
+            <div><button><a href="index.html">View More</a></button></div>
+        </div>
+        <div class="catshelf">
+            <div class="bookframe">
+                <img src="img/stevejob.png" alt="">
+            </div>
+            <div class="booktitle">Book</div>
+            <div><button><a href="index.html">View More</a></button></div>
+        </div>
+        <div class="catshelf">
+            <div class="bookframe">
+                <img src="img/stevejob.png" alt="">
+            </div>
+            <div class="booktitle">Book</div>
+            <div><button><a href="index.html">View More</a></button></div>
+        </div>
+        <div class="catshelf">
+            <div class="bookframe">
+                <img src="img/stevejob.png" alt="">
+            </div>
+            <div class="booktitle">Book</div>
+            <div><button><a href="index.html">View More</a></button></div>
+        </div>
+        <div class="catshelf">
+            <div class="bookframe">
+                <img src="img/stevejob.png" alt="">
+            </div>
+            <div class="booktitle">Book</div>
+            <div><button><a href="index.html">View More</a></button></div>
+        </div>
+        <div class="catshelf">
+            <div class="bookframe">
+                <img src="img/stevejob.png" alt="">
+            </div>
+            <div class="booktitle">Book</div>
+            <div><button><a href="index.html">View More</a></button></div>
+        </div>
+        
+        
     </div>
 
 
