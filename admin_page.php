@@ -19,7 +19,7 @@
             <div class="nav navbar-custom" id="navbarSupportedContent" style="color: #D0EFFF !important;">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="user_page.php">Home</a>
+                        <a class="nav-link" href="admin_page.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Profile</a>
@@ -30,7 +30,7 @@
     </nav>
 
 
-    <!-- Tab 1 -->
+    <!-- Tab Container -->
     <div class="bookshelf">
         <div class="bookcontainer">
             <div class="bookcenter">
@@ -60,7 +60,6 @@
             <div class="booktitle">NOTIFIKASI</div>
             <div class="bookcenter"><button class="button1">Borrow</button></div>
         </div>
-</div>
+    </div>
 </body>
-
 </html>
