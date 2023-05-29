@@ -1,251 +1,241 @@
 @font-face {
-    font-family: Title;
-    src: url(/font/lilita-one.regular.ttf);
+  font-family: Title;
+  src: url(/font/lilita-one.regular.ttf);
 }
 
-
-.navbar{
-    min-height: 100px;
-    background-image: linear-gradient(to right,#1167B1,#2A9DF4,#1167B1);
+.navbar {
+  min-height: 100px;
+  background-image: linear-gradient(to right, #1167b1, #2a9df4, #1167b1);
 }
 
-.navbar-brand{
-    text-align: left;
-    font-weight: bold;
-    font-size: 24px;
-    font-family: Title !important;
-    color: #D0EFFF !important;
+.navbar-brand {
+  text-align: left;
+  font-weight: bold;
+  font-size: 24px;
+  font-family: Title !important;
+  color: #d0efff !important;
 }
 
 .navbar-brand,
 .navbar-custom {
-    text-align: left;
-    font-weight: bold;
-    font-family: Title !important;
-    color: #D0EFFF !important;
+  text-align: left;
+  font-weight: bold;
+  font-family: Title !important;
+  color: #d0efff !important;
 }
 
-.bookshelf{
-    width: 90%;
-    height: 60vh;
-    margin: auto;
-    background-color: white;
-    margin-top: 50px;
- 
+.bookshelf {
+  width: 90%;
+  height: 60vh;
+  margin: auto;
+  background-color: white;
+  margin-top: 50px;
 }
 
-.bookshelf .bstitle{
-    text-align: center;
-    width: 100%;
-    height: 50px;
-    vertical-align: middle;
-    font-size: 28px;
-    font-weight: bolder;
-    font-family: Title;
-    color: #2A9DF4;
+.bookshelf .bstitle {
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  vertical-align: middle;
+  font-size: 28px;
+  font-weight: bolder;
+  font-family: Title;
+  color: #2a9df4;
 }
 
-.bookcontainer{
-    width: 18%;
-    height: 40vh;
-    padding: 20px;
-    margin-left: 1%;
-    position: relative;
-    top: 5%;
-    left: 1.5%;
-    background-color: aliceblue;
-    display: inline-block;
+.bookcontainer {
+  width: 18%;
+  height: 40vh;
+  padding: 20px;
+  margin-left: 1%;
+  position: relative;
+  top: 5%;
+  left: 1.5%;
+  background-color: aliceblue;
+  display: inline-block;
 }
 
-.bookcontainer .bookcenter{
-    text-align: center;
+.bookcontainer .bookcenter {
+  text-align: center;
 }
 
-.bookcontainer .booktitle{
-    text-align: center;
-    font-size: large;
-    font-weight: bold;
-    margin-top: 5px;
+.bookcontainer .booktitle {
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+  margin-top: 5px;
 }
 
-.button1{
-    width: 150px;
-    display: inline-block;
-    background: #2A9DF4;
-    cursor: pointer;
-    border-radius: 30px;
-    border-color: #D0EFFF;
-    border-width: 2px;;
-    text-decoration: none;
-    color: white;
+.button1 {
+  width: 150px;
+  display: inline-block;
+  background: #2a9df4;
+  cursor: pointer;
+  border-radius: 30px;
+  border-color: #d0efff;
+  border-width: 2px;
+  text-decoration: none;
+  color: white;
 }
-
 
 /* Book Categories */
-.catbox{
-    width: 90%;
-    margin: auto;
-    margin-top: 2%;
-    height: auto;
-    background-color: white;
-    border-radius: 30px;
+.catbox {
+  width: 90%;
+  margin: auto;
+  margin-top: 2%;
+  height: auto;
+  background-color: white;
+  border-radius: 30px;
 }
 
-.cattitle{
-    text-align: center;
-    font-weight: bold;
-    font-size: 40px;
-    color: #2A9DF4 !important;
+.cattitle {
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+  color: #2a9df4 !important;
 }
 
-.catbox .catshelf{
-    display: inline-block;
-    width: 20%;
-    height: 300px;
-    
-    margin-bottom: 50px;
-    margin-left: 10%;
-    
+.catbox .catshelf {
+  display: inline-block;
+  width: 20%;
+  height: 300px;
+
+  margin-bottom: 50px;
+  margin-left: 10%;
 }
 
-.catshelf .bookframe{
-    margin: auto;
-    margin-top: 20px;
-    width: 60%;
-    height: 65%;
-    border-radius: 15px;
-    border: 2px solid #1167B1;
-    
+.catshelf .bookframe {
+  margin: auto;
+  margin-top: 20px;
+  width: 60%;
+  height: 65%;
+  border-radius: 15px;
+  border: 2px solid #1167b1;
 }
 
-.bookframe img{
-
-    margin: auto;
-    margin-top: 5%;
-    object-fit: contain;
-    display: block;
-    width: 100%;
-    height: 90%;
+.bookframe img {
+  margin: auto;
+  margin-top: 5%;
+  object-fit: contain;
+  display: block;
+  width: 100%;
+  height: 90%;
 }
 
-.catshelf .booktitle{
-    text-align: center;
-    font-weight: bold;
-    margin-top: 2px;
+.catshelf .booktitle {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 2px;
 }
 
-.catshelf button{
-    background-color: #2A9DF4;
-    color: white;
-    font-size: 12px;
-    margin-left: 25%;
-    text-align: center;
-    font-weight: bold;
-    margin-top: 5%  ;
-    border-radius: 15px;
-    width:50% ;
-    height: 10%;
-    border: 0px;
+.catshelf button {
+  background-color: #2a9df4;
+  color: white;
+  font-size: 12px;
+  margin-left: 25%;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 5%;
+  border-radius: 15px;
+  width: 50%;
+  height: 10%;
+  border: 0px;
 }
 
-.catshelf button a{
-    color: white;
-    text-decoration: none;
+.catshelf button a {
+  color: white;
+  text-decoration: none;
 }
 
 /* Profile User */
 
-.pucontainer{
-    border: 1px solid black;
-    width:  90%;
-    height: 400px;
-    margin: auto;
-    margin-top: 5%;
+.pucontainer {
+  border: 1px solid black;
+  width: 90%;
+  height: 400px;
+  margin: auto;
+  margin-top: 5%;
 }
 
-.pucontainer .pupict{
-    height: 100%;
-    width: 30%;
-    border: 1px solid black;
-    text-align: center;
-    float: left;
+.pucontainer .pupict {
+  height: 100%;
+  width: 30%;
+  border: 1px solid black;
+  text-align: center;
+  float: left;
 }
 
-.pupict img{
-    border: 1px solid blue;
-    border-radius: 50%;
-    height: 80%;
-    width: 80%;
-    margin-top: 10%;
-    object-fit: cover;
-
+.pupict img {
+  border: 1px solid blue;
+  border-radius: 50%;
+  height: 80%;
+  width: 80%;
+  margin-top: 10%;
+  object-fit: cover;
 }
 
-.pucontainer .puinfocon{
-    width: 70%;
-    height: 100%;
-    background-color: #D3D3D3;
-    margin: auto;
-    float: right;
+.pucontainer .puinfocon {
+  width: 70%;
+  height: 100%;
+  background-color: #d3d3d3;
+  margin: auto;
+  float: right;
 }
 
-.puinfocon .puinfo{
-    width: 75%;
-    height: 70%;
-    background-color: white;
-    margin: auto;
-    margin-top: 5%;
+.puinfocon .puinfo {
+  width: 75%;
+  height: 70%;
+  background-color: white;
+  margin: auto;
+  margin-top: 5%;
 }
 
-.puinfo .profildiv{
-    display: inline-block;
-    height: 45%;
-    width: 40%;
-    margin-left: 7%;
-    margin-top: 1%;
-    background-color: white;
+.puinfo .profildiv {
+  display: inline-block;
+  height: 45%;
+  width: 40%;
+  margin-left: 7%;
+  margin-top: 1%;
+  background-color: white;
 }
 
-.pucontainer .pubar{
-    width: 100%;
-    height: 20%;
-    background-color: white;
-    margin-top: 1%;
-    border-radius: 10px;
+.pucontainer .pubar {
+  width: 100%;
+  height: 20%;
+  background-color: white;
+  margin-top: 1%;
+  border-radius: 10px;
 }
 
-.pubar .putextcon{
-    width: 80%;
-    height: 100%;
-    border: 1px solid black;
-   float: left;
+.pubar .putextcon {
+  width: 80%;
+  height: 100%;
+  border: 1px solid black;
+  float: left;
 }
 
-.pubar .pueditcon{
-
-    float: right;
-    width: 20%;
-    height: 100%;
-    border: 1px solid blue;
-    text-align: center;
-    vertical-align: middle;
-
+.pubar .pueditcon {
+  float: right;
+  width: 20%;
+  height: 100%;
+  border: 1px solid blue;
+  text-align: center;
+  vertical-align: middle;
 }
 
-.putextcon .putitle{
-    font-weight: bold;
-    margin-left: 2%;
+.putextcon .putitle {
+  font-weight: bold;
+  margin-left: 2%;
 }
-.putextcon .puins{
-    
-    margin-left: 2%;
-}
-
-.pueditcon a{
-    font-weight: bold;
-    font-size: 20px;
+.putextcon .puins {
+  margin-left: 2%;
 }
 
-.centering{
-    text-align: center;
+.pueditcon a {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.centering {
+  text-align: center;
 }
