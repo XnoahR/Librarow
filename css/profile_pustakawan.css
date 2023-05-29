@@ -52,8 +52,8 @@
 }
   
 .content {
-    width: 80%;
-    height: 10vh;
+    width: 60%;
+    height: 15vh;
     margin: auto;
     background-color: white;
     margin-top: 2px;
@@ -61,14 +61,23 @@
 }
 
 
-.button1 {
-    width: 150px;
-    display: inline-block;
-    background: #2A9DF4;
-    cursor: pointer;
-    border-radius: 30px;
-    border-color: #D0EFFF;
-    border-width: 2px;
-    text-decoration: none;
-    color: white;
-}
+.table-container {
+    border-collapse: collapse;
+    margin-left: 1%;
+  }
+  
+  .column {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .column p {
+    margin: 0;
+  }
+
+  .par{
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+  }

@@ -30,43 +30,82 @@
     </nav>
 
 
-    <!-- Tab Container -->
+    <!-- Profile Picture -->
     <div class="picture">
         <div class="imgpicture">
             <img src="img/orang.png" width="75%" alt="404! Image Not Found">
         </div>
     </div>
     
+    <!-- Tabel Nama -->
     <div class="content">
-    <table class="table-container">
-    <table class="tg">
+    <table>
         <thead>
         <tr>
-            <td class="tg-0lax" rowspan="2"></td>
-            <td class="tg-0lax"></td>
-            <td class="tg-0lax" rowspan="2"></td>
+            <td class="column" rowspan="2" style="width: 15vh;">
+                <img src="img/profil_orang.png" width="100%">
+            </td>
+            <td class="column" style="width: 95vh;">
+                <p class="par">Nama</p>
+            </td>
+            <td class="column" rowspan="2" style="width: 15vh;">
+                <p>Edit</p>
+            </td>
         </tr>
         <tr>
-            <td class="tg-0lax"></td>
+            <td class="column" style="width: 95vh;">
+                <p>John Doe</p>
+            </td>
         </tr>
         </thead>
     </table>
     </div>
     
-    <!-- Pemisah sementara -->
+    <!-- Tabel Email -->
     <div class="content">
-
+    <table>
+        <thead>
+        <tr>
+            <td class="column" rowspan="2" style="width: 15vh;">
+                <img src="img/profil_email.png" width="100%">
+            </td>
+            <td class="column" style="width: 95vh;">
+                <p class="par">Email</p>
+            </td>
+            <td class="column" rowspan="2" style="width: 15vh;">
+                <p>Edit</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="column" style="width: 95vh;">
+                <p>johndoedoejohn123@staff.ac.id</p>
+            </td>
+        </tr>
+        </thead>
+    </table>
     </div>
+
+    <!-- Tabel Password -->
     <div class="content">
-
-    </div>
-    <div class="content">
-
-    </div>
-    <footer>
-        <p>Cesoanaocaoncoanco</p>
-    </footer>
-    
-
+    <table>
+        <thead>
+        <tr>
+            <td class="column" rowspan="2" style="width: 15vh;">
+                <img src="img/profil_password.png" width="100%">
+            </td>
+            <td class="column" style="width: 95vh;">
+                <p class="par">Password</p>
+            </td>
+            <td class="column" rowspan="2" style="width: 15vh;">
+                <p>Edit</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="column" style="width: 95vh;">
+                <p>********</p>
+            </td>
+        </tr>
+        </thead>
+    </table>
 </body>
 </html>
