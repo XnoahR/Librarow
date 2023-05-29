@@ -80,6 +80,7 @@
     color: white;
 }
 
+
 /* Book Categories */
 .catbox{
     width: 90%;
@@ -150,4 +151,101 @@
 .catshelf button a{
     color: white;
     text-decoration: none;
+}
+
+/* Profile User */
+
+.pucontainer{
+    border: 1px solid black;
+    width:  90%;
+    height: 400px;
+    margin: auto;
+    margin-top: 5%;
+}
+
+.pucontainer .pupict{
+    height: 100%;
+    width: 30%;
+    border: 1px solid black;
+    text-align: center;
+    float: left;
+}
+
+.pupict img{
+    border: 1px solid blue;
+    border-radius: 50%;
+    height: 80%;
+    width: 80%;
+    margin-top: 10%;
+    object-fit: cover;
+
+}
+
+.pucontainer .puinfocon{
+    width: 70%;
+    height: 100%;
+    background-color: #D3D3D3;
+    margin: auto;
+    float: right;
+}
+
+.puinfocon .puinfo{
+    width: 75%;
+    height: 70%;
+    background-color: white;
+    margin: auto;
+    margin-top: 5%;
+}
+
+.puinfo .profildiv{
+    display: inline-block;
+    height: 45%;
+    width: 40%;
+    margin-left: 7%;
+    margin-top: 1%;
+    background-color: white;
+}
+
+.pucontainer .pubar{
+    width: 100%;
+    height: 20%;
+    background-color: white;
+    margin-top: 1%;
+    border-radius: 10px;
+}
+
+.pubar .putextcon{
+    width: 80%;
+    height: 100%;
+    border: 1px solid black;
+   float: left;
+}
+
+.pubar .pueditcon{
+
+    float: right;
+    width: 20%;
+    height: 100%;
+    border: 1px solid blue;
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+.putextcon .putitle{
+    font-weight: bold;
+    margin-left: 2%;
+}
+.putextcon .puins{
+    
+    margin-left: 2%;
+}
+
+.pueditcon a{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.centering{
+    text-align: center;
 }
