@@ -19,10 +19,10 @@
             <div class="nav navbar-custom" id="navbarSupportedContent" style="color: #D0EFFF !important;">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="admin_page.php">Home</a>
+                        <a class="nav-link" href="#admin_page.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Profile</a>
+                        <a class="nav-link" href="#profile_pustakawan.php">Profile</a>
                     </li>
                 </ul>
             </div>
