@@ -43,7 +43,7 @@
             <div class="bookcenter">
                 <img src="img/pustakawan.png" width="145" height="200">
             </div>
-            <div class="booktitle">DATA PUSTAKAWAN</div>
+            <div class="booktitle">PUSTAKAWAN</div>
             <div class="bookcenter"><button class="button1">Borrow</button></div>
         </div>
         <div class="bookcontainer">
@@ -61,55 +61,6 @@
             <div class="bookcenter"><button class="button1">Borrow</button></div>
         </div>
 </div>
-
-    <div class="bookshelf">
-        <div class="bstitle">MOST VIEWED</div>
-        <div class="bookcontainer">
-            <div class="bookcenter">
-                <img src="img/stevejob.png" width="145" height="200">
-            </div>
-            <div class="booktitle">Steve Jobs</div>
-            <div class="bookcenter"><button class="button1">Borrow</button></div>
-        </div>
-        <div class="bookcontainer">
-            <div class="bookcenter">
-                <img src="img/stevejob.png" width="145" height="200">
-            </div>
-            <div class="booktitle">Steve Jobs</div>
-            <div class="bookcenter"><button class="button1">Borrow</button></div>
-        </div>
-        <div class="bookcontainer">
-            <div class="bookcenter">
-                <img src="img/stevejob.png" width="145" height="200">
-            </div>
-            <div class="booktitle">Steve Jobs</div>
-            <div class="bookcenter"><button class="button1">Borrow</button></div>
-        </div>
-        <div class="bookcontainer">
-            <div class="bookcenter">
-                <img src="img/stevejob.png" width="145" height="200">
-            </div>
-            <div class="booktitle">Steve Jobs</div>
-            <div class="bookcenter"><button class="button1">Borrow</button></div>
-        </div>
-        <div class="bookcontainer">
-            <div class="bookcenter">
-                <img src="img/stevejob.png" width="145" height="200">
-            </div>
-            <div class="booktitle">Steve Jobs</div>
-            <div class="bookcenter"><button class="button1">Borrow</button></div>
-        </div>
-    </div>
-
-    <div class="bookshelf">
-        <div class="bstitle">NEW RELEASE!</div>
-        <div class="bookcontainer">buku 1</div>
-        <div class="bookcontainer">buku 2</div>
-        <div class="bookcontainer">buku 3</div>
-        <div class="bookcontainer">buku 4</div>
-        <div class="bookcontainer">buku 5</div>
-    </div>
-
 </body>
 
 </html>
