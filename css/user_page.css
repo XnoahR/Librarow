@@ -80,6 +80,7 @@
     color: white;
 }
 
+/* Book Categories */
 .catbox{
     width: 90%;
     margin: auto;
@@ -94,4 +95,59 @@
     font-weight: bold;
     font-size: 40px;
     color: #2A9DF4 !important;
+}
+
+.catbox .catshelf{
+    display: inline-block;
+    width: 20%;
+    height: 300px;
+    
+    margin-bottom: 50px;
+    margin-left: 10%;
+    
+}
+
+.catshelf .bookframe{
+    margin: auto;
+    margin-top: 20px;
+    width: 60%;
+    height: 65%;
+    border-radius: 15px;
+    border: 2px solid #1167B1;
+    
+}
+
+.bookframe img{
+
+    margin: auto;
+    margin-top: 5%;
+    object-fit: contain;
+    display: block;
+    width: 100%;
+    height: 90%;
+}
+
+.catshelf .booktitle{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+.catshelf button{
+    background-color: #2A9DF4;
+    color: white;
+    font-size: 12px;
+    margin-left: 25%;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 5%  ;
+    border-radius: 15px;
+    width:50% ;
+    height: 10%;
+    border: 0px;
+}
+
+.catshelf button a{
+    color: white;
+    text-decoration: none;
 }
