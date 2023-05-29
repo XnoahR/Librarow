@@ -26,7 +26,7 @@
                         <a class="nav-link" href="#">Categories</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Profile</a>
+                        <a class="nav-link" href="user_profile.php">Profile</a>
                     </li>
                 </ul>
             </div>
@@ -40,42 +40,42 @@
                 <img src="img/stevejob.png" alt="">
             </div>
             <div class="booktitle">Book</div>
-            <div><button><a href="index.html">View More</a></button></div>
+            <div><button><a href="user_page.php">View More</a></button></div>
         </div>
         <div class="catshelf">
             <div class="bookframe">
                 <img src="img/stevejob.png" alt="">
             </div>
             <div class="booktitle">Book</div>
-            <div><button><a href="index.html">View More</a></button></div>
+            <div><button><a href="user_page.php">View More</a></button></div>
         </div>
         <div class="catshelf">
             <div class="bookframe">
                 <img src="img/stevejob.png" alt="">
             </div>
             <div class="booktitle">Book</div>
-            <div><button><a href="index.html">View More</a></button></div>
+            <div><button><a href="user_page.php">View More</a></button></div>
         </div>
         <div class="catshelf">
             <div class="bookframe">
                 <img src="img/stevejob.png" alt="">
             </div>
             <div class="booktitle">Book</div>
-            <div><button><a href="index.html">View More</a></button></div>
+            <div><button><a href="user_page.php">View More</a></button></div>
         </div>
         <div class="catshelf">
             <div class="bookframe">
                 <img src="img/stevejob.png" alt="">
             </div>
             <div class="booktitle">Book</div>
-            <div><button><a href="index.html">View More</a></button></div>
+            <div><button><a href="user_page.php">View More</a></button></div>
         </div>
         <div class="catshelf">
             <div class="bookframe">
                 <img src="img/stevejob.png" alt="">
             </div>
             <div class="booktitle">Book</div>
-            <div><button><a href="index.html">View More</a></button></div>
+            <div><button><a href="user_page.php">View More</a></button></div>
         </div>
         
         

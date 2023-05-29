@@ -25,7 +25,7 @@
                         <a class="nav-link" href="book_categories.php">Categories</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Profile</a>
+                        <a class="nav-link" href="user_profile.php">Profile</a>
                     </li>
                 </ul>
             </div>
@@ -41,35 +41,35 @@
                 <img src="img/stevejob.png" width="145" height="200">
             </div>
             <div class="booktitle">Steve Jobs</div>
-            <div class="bookcenter"><button class="button1">Borrow</button></div>
+            <div class="bookcenter"><button class="button1"><a href="borrow_book.php">Borrow</a></button></div>
         </div>
         <div class="bookcontainer">
             <div class="bookcenter">
                 <img src="img/stevejob.png" width="145" height="200">
             </div>
             <div class="booktitle">Steve Jobs</div>
-            <div class="bookcenter"><button class="button1">Borrow</button></div>
+            <div class="bookcenter"><button class="button1"><a href="borrow_book.php">Borrow</a></button></div>
         </div>
         <div class="bookcontainer">
             <div class="bookcenter">
                 <img src="img/stevejob.png" width="145" height="200">
             </div>
             <div class="booktitle">Steve Jobs</div>
-            <div class="bookcenter"><button class="button1">Borrow</button></div>
+            <div class="bookcenter"><button class="button1"><a href="borrow_book.php">Borrow</a></button></div>
         </div>
         <div class="bookcontainer">
             <div class="bookcenter">
                 <img src="img/stevejob.png" width="145" height="200">
             </div>
             <div class="booktitle">Steve Jobs</div>
-            <div class="bookcenter"><button class="button1">Borrow</button></div>
+            <div class="bookcenter"><button class="button1"><a href="borrow_book.php">Borrow</a></button></div>
         </div>
         <div class="bookcontainer">
             <div class="bookcenter">
                 <img src="img/stevejob.png" width="145" height="200">
             </div>
             <div class="booktitle">Steve Jobs</div>
-            <div class="bookcenter"><button class="button1">Borrow</button></div>
+            <div class="bookcenter"><button class="button1"><a href="borrow_book.php">Borrow</a></button></div>
         </div>
     </div>
     <div class="bookshelf">
@@ -79,35 +79,35 @@
                 <img src="img/stevejob.png" width="145" height="200">
             </div>
             <div class="booktitle">Steve Jobs</div>
-            <div class="bookcenter"><button class="button1">Borrow</button></div>
+            <div class="bookcenter"><button class="button1"><a href="borrow_book.php">Borrow</a></button></div>
         </div>
         <div class="bookcontainer">
             <div class="bookcenter">
                 <img src="img/stevejob.png" width="145" height="200">
             </div>
             <div class="booktitle">Steve Jobs</div>
-            <div class="bookcenter"><button class="button1">Borrow</button></div>
+            <div class="bookcenter"><button class="button1"><a href="borrow_book.php">Borrow</a></button></div>
         </div>
         <div class="bookcontainer">
             <div class="bookcenter">
                 <img src="img/stevejob.png" width="145" height="200">
             </div>
             <div class="booktitle">Steve Jobs</div>
-            <div class="bookcenter"><button class="button1">Borrow</button></div>
+            <div class="bookcenter"><button class="button1"><a href="borrow_book.php">Borrow</a></button></div>
         </div>
         <div class="bookcontainer">
             <div class="bookcenter">
                 <img src="img/stevejob.png" width="145" height="200">
             </div>
             <div class="booktitle">Steve Jobs</div>
-            <div class="bookcenter"><button class="button1">Borrow</button></div>
+            <div class="bookcenter"><button class="button1"><a href="borrow_book.php">Borrow</a></button></div>
         </div>
         <div class="bookcontainer">
             <div class="bookcenter">
                 <img src="img/stevejob.png" width="145" height="200">
             </div>
             <div class="booktitle">Steve Jobs</div>
-            <div class="bookcenter"><button class="button1">Borrow</button></div>
+            <div class="bookcenter"><button class="button1"><a href="borrow_book.php">Borrow</a></button></div>
         </div>
     </div>
 

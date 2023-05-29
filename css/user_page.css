@@ -24,6 +24,13 @@
   color: #d0efff !important;
 }
 
+                               /* Home User */
+/* /////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////// */
+
+
 .bookshelf {
   width: 90%;
   height: 60vh;
@@ -78,7 +85,17 @@
   color: white;
 }
 
-/* Book Categories */
+button a{
+  color: white;
+  text-decoration: none;
+}
+
+                               /* Book Categories */
+/* /////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////// */
+
 .catbox {
   width: 90%;
   margin: auto;
@@ -147,7 +164,11 @@
   text-decoration: none;
 }
 
-/* Profile User */
+                                /* Profile User */
+/* /////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////// */
 
 .pucontainer {
   border: 1px solid black;
@@ -237,5 +258,114 @@
 }
 
 .centering {
+  text-align: center;
+}
+
+
+                               /* Borrow Book */
+/* /////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////// */
+
+.bbcontainer{
+  width: 90%;
+  height: 600px;
+  border-radius: 15px;
+  background-color: white;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.bbcontainer .bbframe{
+  width: 40%;
+  height: 100%;
+ 
+  float: left;
+}
+
+.bbcontainer .bbtextcon{
+  width: 60%;
+  height: 100%;
+  
+  float: right;
+}
+
+.bbframe .bbimgcon{
+  width: 70%;
+  height: 80%;
+ 
+  margin: auto;
+  margin-top: 10%;
+}
+
+.bbimgcon img{
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.bbtextcon .bbtitle{
+  width: 100%;
+  height: 15%;
+  
+}
+.bbtitle p{
+  font-size: 48px;
+  vertical-align: middle;
+  margin-left: 2%;
+}
+
+.bbtextcon .bbdesc{
+  width: 100%;
+  height: 45%;
+  
+}
+
+.bbdesc p{
+  margin-left: 2%;
+}
+
+.bbtextcon .bbauthor{
+  width: 100%;
+  height: 20%;
+  
+}
+
+.bbauthor .authtxt{
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.bbauthor p{
+  margin-left: 2%;
+  margin-top: 2%;
+}
+
+.bbtextcon .bbava{
+  width: 100%;
+  height: 20%;
+  
+}
+
+.bbava .avatxt{
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 2%;
+}
+
+.bbava p{
+  margin-left: 2%;
+  margin-top: 2%;
+}
+
+.buttonbb{
+  width: 15%;
+  height: 50px;
+  background-color: #4C6ED7;
+  margin-left: 45%;
   text-align: center;
 }
