@@ -22,9 +22,6 @@
                         <a class="nav-link" href="user_page.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="book_categories.php">Categories</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#">Profile</a>
                     </li>
                 </ul>
@@ -33,45 +30,37 @@
     </nav>
 
 
-    <!--  -->
+    <!-- Tab 1 -->
     <div class="bookshelf">
-        <div class="bstitle">NEW RELEASE</div>
         <div class="bookcontainer">
             <div class="bookcenter">
-                <img src="img/stevejob.png" width="145" height="200">
+                <img src="img/mahasiswa.png" width="145" height="200">
             </div>
-            <div class="booktitle">Steve Jobs</div>
+            <div class="booktitle">DATA MAHASISWA</div>
+            <div class="bookcenter"><button class="button1">Borrow</button></div>    
+        </div>
+        <div class="bookcontainer">
+            <div class="bookcenter">
+                <img src="img/pustakawan.png" width="145" height="200">
+            </div>
+            <div class="booktitle">DATA PUSTAKAWAN</div>
             <div class="bookcenter"><button class="button1">Borrow</button></div>
         </div>
         <div class="bookcontainer">
             <div class="bookcenter">
-                <img src="img/stevejob.png" width="145" height="200">
+                <img src="img/book.png" width="145" height="200">
             </div>
-            <div class="booktitle">Steve Jobs</div>
+            <div class="booktitle">DATA BUKU</div>
             <div class="bookcenter"><button class="button1">Borrow</button></div>
         </div>
         <div class="bookcontainer">
             <div class="bookcenter">
-                <img src="img/stevejob.png" width="145" height="200">
+                <img src="img/notifikasi.png" width="145" height="200">
             </div>
-            <div class="booktitle">Steve Jobs</div>
+            <div class="booktitle">NOTIFIKASI</div>
             <div class="bookcenter"><button class="button1">Borrow</button></div>
         </div>
-        <div class="bookcontainer">
-            <div class="bookcenter">
-                <img src="img/stevejob.png" width="145" height="200">
-            </div>
-            <div class="booktitle">Steve Jobs</div>
-            <div class="bookcenter"><button class="button1">Borrow</button></div>
-        </div>
-        <div class="bookcontainer">
-            <div class="bookcenter">
-                <img src="img/stevejob.png" width="145" height="200">
-            </div>
-            <div class="booktitle">Steve Jobs</div>
-            <div class="bookcenter"><button class="button1">Borrow</button></div>
-        </div>
-    </div>
+</div>
 
     <div class="bookshelf">
         <div class="bstitle">MOST VIEWED</div>

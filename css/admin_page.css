@@ -39,7 +39,7 @@
     width: 100%;
     height: 50px;
     vertical-align: middle;
-    font-size: 28px;
+    font-size: 20px;
     font-weight: bolder;
     font-family: Title;
     color: #2A9DF4;
@@ -48,7 +48,7 @@
 .bookcontainer{
     width: 18%;
     height: 40vh;
-    padding: 20px;
+    padding: 40px;
     margin-left: 1%;
     position: relative;
     top: 5%;
