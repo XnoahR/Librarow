@@ -1,3 +1,7 @@
+<?php
+include 'functions.php';
+$mahasiswa = query("SELECT * FROM user");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,18 +47,25 @@
             <th>Status</th>
             <th>Aksi</th>
 
+            <?php
+            $i = 1;
+            ?>
+            <?php foreach($mahasiswa as $mhs) : ?>
+
             <tr>
-                <td>1</td>
+                <td><?=$i;?></td>
                 <td>foto</td>
-                <td>Rio Saputro</td>
-                <td>M0521065</td>
-                <td>rio.ae23@student.uns.ac.id</td>
-                <td>Available</td>
+                <td><?=$mhs["nama"]?></td>
+                <td><?=$mhs["nim"]?></td>
+                <td><?=$mhs["email"]?></td>
+                <td><?=$mhs["status"]?></td>
                 <td>
                     <a href="">edit</a> |
                     <a href="">delete</a>
                 </td>
             </tr>
+            <?php $i++;?>
+            <?php endforeach;?>
         </table>
     </div>
 </body>

@@ -1,3 +1,7 @@
+<?php
+include 'functions.php';
+$buku = query("SELECT * FROM buku");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,18 +47,25 @@
             <th>Pengarang</th>
             <th>Aksi</th>
 
+            <?php
+            $i = 1;
+            ?>
+            <?php foreach($buku as $book) : ?>
+
             <tr>
-                <td>1</td>
-                <td>foto</td>
-                <td>Everlasting Dream</td>
-                <td>5</td>
-                <td>Bagus</td>
-                <td>Peni Parker</td>
+                <td><?=$i;?></td>
+                <td><?=$book["sampul"]?></td>
+                <td><?=$book["nama"]?></td>
+                <td><?=$book["available"]?></td>
+                <td>bagus</td>
+                <td><?=$book["pengarang"]?></td>
                 <td>
                     <a href="">edit</a> |
                     <a href="">delete</a>
                 </td>
             </tr>
+            <?php $i++;?>
+            <?php endforeach;?>
         </table>
     </div>
 </body>

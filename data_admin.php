@@ -1,3 +1,7 @@
+<?php
+include 'functions.php';
+$pustakawan = query("SELECT * FROM pustakawan");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,14 +47,21 @@
             <th>Password</th>
 
 
+            <?php
+            $i = 1;
+            ?>
+            <?php foreach($pustakawan as $lib) : ?>
+
             <tr>
-                <td>1</td>
-                <td>foto</td>
-                <td>Ray</td>
-                <td>RayX</td>
-                <td>rio.ae23@student.uns.ac.id</td>
-                <td>xyar</td>
+                <td><?=$i;?></td>
+                <td><?=$lib["foto"]?></td>
+                <td><?=$lib["nama"]?></td>
+                <td><?=$lib["username"]?></td>
+                <td><?=$lib["email"]?></td>
+                <td><?=$lib["password"]?></td>
             </tr>
+            <?php $i++;?>
+            <?php endforeach;?>
         </table>
     </div>
 </body>
