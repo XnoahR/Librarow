@@ -33,7 +33,7 @@
         <div class="datasearch">Search
             <input type="text" name="search" id="search">
         </div>
-   
+
         <table border="1px solid" width="85%" style="border-collapse:collapse;margin:auto;">
             <th>No</th>
             <th>Foto</th>
@@ -41,7 +41,7 @@
             <th>Username</th>
             <th>Email</th>
             <th>Password</th>
-            
+
 
             <tr>
                 <td>1</td>
@@ -54,4 +54,5 @@
         </table>
     </div>
 </body>
+
 </html>

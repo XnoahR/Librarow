@@ -1,132 +1,130 @@
 @font-face {
-    font-family: Title;
-    src: url(/font/lilita-one.regular.ttf);
+  font-family: Title;
+  src: url(/font/lilita-one.regular.ttf);
 }
 
-
-.navbar{
-    min-height: 100px;
-    background-image: linear-gradient(to right,#1167B1,#2A9DF4,#1167B1);
+.navbar {
+  min-height: 100px;
+  background-image: linear-gradient(to right, #1167b1, #2a9df4, #1167b1);
 }
 
-.navbar-brand{
-    text-align: left;
-    font-weight: bold;
-    font-size: 24px;
-    font-family: Title !important;
-    color: #D0EFFF !important;
+.navbar-brand {
+  text-align: left;
+  font-weight: bold;
+  font-size: 24px;
+  font-family: Title !important;
+  color: #d0efff !important;
 }
 
 .navbar-brand,
 .navbar-custom {
-    text-align: left;
-    font-weight: bold;
-    font-family: Title !important;
-    color: #D0EFFF !important;
+  text-align: left;
+  font-weight: bold;
+  font-family: Title !important;
+  color: #d0efff !important;
 }
 
 .bookshelf {
-    width: 90%;
-    height: 60vh;
-    margin: auto;
-    background-color: white;
-    margin-top: 50px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px; 
+  width: 90%;
+  height: 60vh;
+  margin: auto;
+  background-color: white;
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
 .bookcontainer {
+  width: 20%;
+  height: 75%;
 
-    width: 20%;
-    height: 75%;
-   
-   
-    background-color: aliceblue;
-    display: inline-block;
-    margin: auto;
+  background-color: aliceblue;
+  display: inline-block;
+  margin: auto;
 }
 
-
 .bookcontainer .bookcenter {
-    text-align: center;
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .bookcontainer .bookcenter img {
-    max-width: 100%;
-    max-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .bookcontainer .booktitle {
-    text-align: center;
-    font-size: large;
-    font-weight: bold;
-    margin-top: 5px;
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+  margin-top: 5px;
 }
 
 .button1 {
-    width: 150px;
-    display: inline-block;
-    background: #2A9DF4;
-    cursor: pointer;
-    border-radius: 30px;
-    border-color: #D0EFFF;
-    border-width: 2px;
-    text-decoration: none;
-    color: white;
+  width: 150px;
+  display: inline-block;
+  background: #2a9df4;
+  cursor: pointer;
+  border-radius: 30px;
+  border-color: #d0efff;
+  border-width: 2px;
+  text-decoration: none;
+  color: white;
 }
 
-                               /* Data */
+/* Data */
 /* /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////// */
 
-.datacontainer{
-    width: 90%;
-    height: 90vh;
-    background-color: white;
-    margin: auto;
-    margin-top: 2%;
-    border-radius: 30px;
+.datacontainer {
+  width: 90%;
+  height: 90vh;
+  background-color: white;
+  margin: auto;
+  margin-top: 2%;
+  border-radius: 30px;
 }
 
-.datacontainer .datatitle{
-    width: 95%;
-    height: 5%;
-    margin-top: 2%;
-    border-bottom: 2px solid #2A9DF4;
-    margin: auto;
-    color: #3E61CC;
-    font-size: 20px;
-    font-weight: bold;
+.datacontainer .datatitle {
+  width: 95%;
+  height: 5%;
+  margin-top: 2%;
+  border-bottom: 2px solid #2a9df4;
+  margin: auto;
+  color: #3e61cc;
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.datacontainer .datasearch{
-    width: 95%;
-    height: 5%;
-    border-bottom:2px solid #2A9DF4;
-    margin: auto;
-    margin-bottom: 1%;
+.datacontainer .datasearch {
+  width: 95%;
+  height: 5%;
+  border-bottom: 2px solid #2a9df4;
+  margin: auto;
+  margin-bottom: 1%;
 }
 
-.datacontainer table, th, td {
-    border: 1px solid #114FEE;
-    text-align: center;
-  }
+.datacontainer table,
+th,
+td {
+  border: 1px solid #114fee;
+  text-align: center;
+}
 
-  .datacontainer a{
-    margin-left: 3%;
-    font-size: 16px;
-    font-weight: bold;
-    text-decoration: none;
-  }
+.datacontainer a {
+  margin-left: 3%;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+}
 
-  .datacontainer th{
-    background-color: #2A9DF4;
-  }
+.datacontainer th {
+  background-color: #2a9df4;
+}

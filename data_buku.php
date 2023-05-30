@@ -33,7 +33,7 @@
         <div class="datasearch">Search
             <input type="text" name="search" id="search">
         </div>
-    <a href="">Tambah Buku</a>
+        <a href="">Tambah Buku</a>
         <table border="1px solid" width="95%" style="border-collapse:collapse;margin:auto;">
             <th>No</th>
             <th>Sampul</th>
@@ -58,4 +58,5 @@
         </table>
     </div>
 </body>
+
 </html>
