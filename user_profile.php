@@ -56,7 +56,7 @@
                 </div>
             </div>
             <div class="profildiv centering">
-                    <button style="margin-top:15%;"><a href="user_riwayat_peminjaman.php">Logout</a></button>
+            <a href="login.php"><button style="margin-top:10%;">Logout</button></a>
             </div>
         </div>
     </div>
