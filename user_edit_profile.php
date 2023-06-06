@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,9 +8,7 @@
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/user_page.css">
 </head>
-
 <body style="background-color: #D0D0D0;">
-
     <!--Navbar-->
     <nav class="navbar sticky-top navbar-expand-sm navbar-dark" style="color: #D0EFFF;">
         <div class="container-fluid ">
@@ -32,35 +29,8 @@
         </div>
     </nav>
 
-    <!-- Card berisi Profil, History Peminjaman, dan Status -->
-    <div class="pucontainer">
-        <div class="pupict">
-            <img src="img/orang.png" alt="">
-        </div>
-        <div class="puinfocon">
-            <div class="puinfo">
-                <div class="profildiv">
-                    <p>your status:</p>
-                    <p>Available</p>
-                </div>
-                <div class="profildiv centering">
-                    <button style="margin-top:15%;">History</button>
-                </div>
-                <div class="profildiv centering">
-                    <p>approved</p>
-                    <p>x</p>
-                </div>
-                <div class="profildiv centering">
-                    <p>pending</p>
-                    <p>x</p>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- Content Writer -->
-    <div class="pucontainer">
+<!-- Content Writer -->
+<div class="pucontainer">
         <!-- Nama -->
         <div class="pubar">
             <div class="putextcon">
@@ -68,17 +38,6 @@
                 <div class="puins">Rio Saputro</div>
             </div>
             <div class="pueditcon">
-            <a href="user_edit_profile.php">Edit</a>
-            </div>
-        </div>
-        <!-- NIM -->
-        <div class="pubar">
-            <div class="putextcon">
-                <div class="putitle">NIM</div>
-                <div class="puins">M0521065</div>
-            </div>
-            <div class="pueditcon">
-            <a href="user_edit_profile.php">Edit</a>
             </div>
         </div>
         <!-- Email -->
@@ -88,7 +47,6 @@
                 <div class="puins">rio.ae23@student.uns.ac.id</div>
             </div>
             <div class="pueditcon">
-            <a href="user_edit_profile.php">Edit</a>
             </div>
         </div>
         <!-- Username -->
@@ -98,7 +56,6 @@
                 <div class="puins">None</div>
             </div>
             <div class="pueditcon">
-            <a href="user_edit_profile.php">Edit</a>
             </div>
         </div>
         <!-- Password -->
@@ -108,20 +65,10 @@
                 <div class="puins">None</div>
             </div>
             <div class="pueditcon">
-            <a href="user_edit_profile.php">Edit</a>
             </div>
         </div>
-        <div class="pubar">
-            <div class="putextcon">
-                <div class="putitle">Buku yang sedang dipinjam</div>
-                <div class="puins">None</div>
-            </div>
-            <div class="pueditcon">
-            <a href="">View</a>
-            </div>
-        </div>
-        
     </div>
-</body>
+    <button class="buttonbb">Save Changes</button>
 
+</body>
 </html>
