@@ -38,21 +38,21 @@
                 <img src="img/mahasiswa.png" width="145" height="200">
             </div>
             <div class="booktitle">DATA MAHASISWA</div>
-            <div class="bookcenter"><button class="button1"><a href="data_mahasiswa.php">KLIK</a> </button></div>    
+            <div class="bookcenter"><a href="data_mahasiswa.php"><button class="button1">KLIK</button></a></div>    
         </div>
         <div class="bookcontainer">
             <div class="bookcenter">
                 <img src="img/pustakawan.png" width="145" height="200">
             </div>
             <div class="booktitle">PUSTAKAWAN</div>
-            <div class="bookcenter"><button class="button1"><a href="data_admin.php">KLIK</a></button></div>
+            <div class="bookcenter"><a href="data_admin.php"><button class="button1">KLIK</button></a></div>
         </div>
         <div class="bookcontainer">
             <div class="bookcenter">
                 <img src="img/book.png" width="145" height="200">
             </div>
             <div class="booktitle">DATA BUKU</div>
-            <div class="bookcenter"><button class="button1"><a href="data_buku.php">KLIK</a></button></div>
+            <div class="bookcenter"><a href="data_buku.php"><button class="button1">KLIK</button></a></div>
         </div>
         <div class="bookcontainer">
             <div class="bookcenter">
@@ -60,11 +60,7 @@
             </div>
             <div class="booktitle">NOTIFIKASI</div>
             <div class="bookcenter">
-                <button class="button1">
-                    <a href="notifikasi_pustakawan.php" style="color: white;">
-                        Klik
-                    </a>
-                </button>
+            <div class="bookcenter"><a href="notifikasi_pustakawan.php"><button class="button1">KLIK</button></a></div>
             </div>
         </div>
     </div>

@@ -16,6 +16,17 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
         }
+
+        .show-more-button,
+        .show-less-button {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 
@@ -51,28 +62,51 @@
                         <p class="card-text">Kami telah merilis pembaruan terbaru untuk aplikasi Librarow. Silakan unduh
                             versi terbaru untuk mendapatkan fitur dan perbaikan terkini.</p>
                     </div>
-                    <div class="notification-card">
+                    <div class="notification-card hidden">
                         <h3 class="card-title">Permintaan Pengembalian</h3>
                         <p class="card-text">Pengembalian telah divalidasi oleh admin, selamat meminjam buku kembali dan semangat mencari ilmu</p>
                     </div>
-                    <div class="notification-card">
+                    <div class="notification-card hidden">
                         <h3 class="card-title">Pengembalian</h3>
                         <p class="card-text">Pengembalian buku berjudul "Test1" akan divalidasi oleh admin, kembalikan buku terlebih dahulu agar segera divalidasi</p>
                     </div>
-                    <div class="notification-card">
+                    <div class="notification-card hidden">
                         <h3 class="card-title">Permintaan Peminjaman</h3>
                         <p class="card-text">Validasi berhasil, silahkan pinjam buku yang sesuai dengan kesepakatan dengan mendatangi perpustakaan</p>
                     </div>
-                    <div class="notification-card">
+                    <div class="notification-card hidden">
                         <h3 class="card-title">Peminjaman</h3>
                         <p class="card-text">Anda telah meminjam buku yang berjudul "Test1", mohon tunggu proses selanjutnya</p>
                     </div>
+                    <div class="show-more-button">Show More</div>
+                    <div class="show-less-button hidden">Show Less</div>
                 </div>
             </div>
         </div>
     </section>
 
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const showMoreButton = document.querySelector('.show-more-button');
+        const showLessButton = document.querySelector('.show-less-button');
+        const hiddenCards = document.querySelectorAll('.notification-card.hidden');
+
+        showMoreButton.addEventListener('click', function() {
+            hiddenCards.forEach(card => {
+                card.classList.remove('hidden');
+            });
+            showMoreButton.classList.add('hidden');
+            showLessButton.classList.remove('hidden');
+        });
+
+        showLessButton.addEventListener('click', function() {
+            hiddenCards.forEach(card => {
+                card.classList.add('hidden');
+            });
+            showMoreButton.classList.remove('hidden');
+            showLessButton.classList.add('hidden');
+        });
+    </script>
 </body>
 
 </html>
