@@ -3,25 +3,20 @@ include 'functions.php';
 
 
 
-if(isset($_POST["login"])){
+if(isset($_POST["register"])){
+    $name = $_POST["name"];
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username' AND password = '$password'");
-    $resultad =mysqli_query($conn, "SELECT * FROM pustakawan WHERE username = '$username' AND password = '$password'");
-
-    if(mysqli_num_rows($result) == 1){
-        $row = mysqli_fetch_assoc($result);
-        header("Location:user_page.php");
-            exit;
-    }
-    else if(mysqli_num_rows($resultad) == 1 ){
-        $row = mysqli_fetch_assoc($resultad);
-        header("Location:admin_page.php");
-            exit;
+    if(register($_POST) > 0){
+        echo "<script>
+        alert('Account Created!');
+        </script>";
     }
     else{
-        echo "username atau kata sandi salah";
+        echo "<script>
+        alert('System Error!');
+        </script>";   
     }
 }
 
@@ -34,7 +29,7 @@ if(isset($_POST["login"])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Librarow Login</title>
+    <title>Librarow Register</title>
     <link rel="stylesheet" href="css/login.css">
 </head>
 
@@ -43,21 +38,20 @@ if(isset($_POST["login"])){
         <div class="circle">
             <div class="logo">xxx </div>
         </div>
-        <div class="title">LOGIN</div>
+        <div class="title">REGISTER</div>
         <!-- sementara -->
         <form action="" method="post">
+            <div class="textlog">Name <br>
+        <input type="text" name="name" id="name">
             <div class="textlog">Username <br>
         <input type="text" name="username" id="username">
             <div class="textlog">Password <br>
         <input type="password" name="password" id="password">
-        <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-        <button type="submit" name="login">Login</button>
+        <button type="submit" name="register">Register</button>
         </form>
         </div>
-        <a href="">Sign up</a>
-        <a href="" style="margin-left:125px;">Forgot password?</a>
+        <a href="login.php">Login</a>
+      
     </div>
 </body>
 
