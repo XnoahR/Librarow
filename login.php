@@ -1,6 +1,13 @@
 <?php
 include 'functions.php';
-
+session_start();
+if(isset($_SESSION['login'])){
+    header("Location:user_page.php");
+    exit;
+}
+else if(isset($_SESSION['admin'])){
+    header("Location:admin_page.php");
+}
 
 
 if(isset($_POST["login"])){
@@ -12,11 +19,17 @@ if(isset($_POST["login"])){
 
     if(mysqli_num_rows($result) == 1){
         $row = mysqli_fetch_assoc($result);
+        $_SESSION['login'] = true;
+        setcookie('username',$username,time()+3600);
+        setcookie('password',$password,time()+3600);
         header("Location:user_page.php");
-            exit;
+        exit;
     }
     else if(mysqli_num_rows($resultad) == 1 ){
         $row = mysqli_fetch_assoc($resultad);
+        $_SESSION['admin'] = true;
+        setcookie('username',$username,time()+3600);
+        setcookie('password',$password,time()+3600);
         header("Location:admin_page.php");
             exit;
     }

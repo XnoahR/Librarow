@@ -1,5 +1,10 @@
 <?php 
  include 'functions.php';
+ session_start();
+if(!isset($_SESSION["login"])){
+    header("Location:login.php");
+    exit;
+} 
  $category = $_GET['kategori'];
  $book = query("SELECT * FROM buku WHERE kategori ='$category'");
 
