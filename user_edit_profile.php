@@ -29,46 +29,37 @@
         </div>
     </nav>
 
-<!-- Content Writer -->
-<div class="pucontainer">
+<!-- Form Content -->
+<form>
         <!-- Nama -->
-        <div class="pubar">
-            <div class="putextcon">
-                <div class="putitle">Name</div>
-                <div class="puins">Rio Saputro</div>
-            </div>
-            <div class="pueditcon">
-            </div>
+        <div>
+            <label>Nama</label> <br>
+            <input name="nama" type="text" placeholder="Masukkan nama">
+        </div>
+        <!-- NIM -->
+        <div>
+            <label>NIM</label> <br>
+            <input name="nama" type="text" placeholder="Masukkan nama">
         </div>
         <!-- Email -->
-        <div class="pubar">
-            <div class="putextcon">
-                <div class="putitle">Email</div>
-                <div class="puins">rio.ae23@student.uns.ac.id</div>
-            </div>
-            <div class="pueditcon">
-            </div>
+        <div>
+            <label>Email</label> <br>
+            <input name="alamat" type="text" placeholder="Masukkan alamat">
         </div>
         <!-- Username -->
-        <div class="pubar">
-            <div class="putextcon">
-                <div class="putitle">Username</div>
-                <div class="puins">None</div>
-            </div>
-            <div class="pueditcon">
-            </div>
+        <div>
+            <label>Username</label> <br>
+            <input name="alamat" type="text" placeholder="Masukkan alamat">
         </div>
         <!-- Password -->
-        <div class="pubar">
-            <div class="putextcon">
-                <div class="putitle">Password</div>
-                <div class="puins">None</div>
-            </div>
-            <div class="pueditcon">
-            </div>
+        <div>
+            <label>Password</label> <br>
+            <input name="alamat" type="text" placeholder="Masukkan alamat">
         </div>
-    </div>
-    <button class="buttonbb">Save Changes</button>
-
+        <!-- Button -->
+        <div>
+        <button class="buttonbb">Save Changes</button>
+        </div>
+</form>
 </body>
 </html>
