@@ -37,13 +37,13 @@ $buku = query("SELECT * FROM buku");
         <div class="datasearch">Search
             <input type="text" name="search" id="search">
         </div>
-        <a href="">Tambah Buku</a>
+        <a href="add_book.php">Tambah Buku</a>
         <table border="1px solid" width="95%" style="border-collapse:collapse;margin:auto;">
             <th>No</th>
             <th>Sampul</th>
             <th>Judul</th>
             <th>Ketersediaan</th>
-            <th>Kondisi</th>
+          
             <th>Pengarang</th>
             <th>Kategori</th>
             <th>Aksi</th>
@@ -58,12 +58,12 @@ $buku = query("SELECT * FROM buku");
                 <td><?=$book["sampul"]?></td>
                 <td><?=$book["nama"]?></td>
                 <td><?=$book["available"]?></td>
-                <td>bagus</td>
+                
                 <td><?=$book["pengarang"]?></td>
                 <td><?=$book["kategori"]?></td>
                 <td>
-                    <a href="">edit</a> |
-                    <a href="">delete</a>
+                    <a href="edit_book.php?id=<?=$book['id']?>">edit</a> |
+                    <a href="delete_book.php?id=<?=$book['id']?>"onclick="return confirm('Delete Item?');">delete</a>
                 </td>
             </tr>
             <?php $i++;?>

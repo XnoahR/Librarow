@@ -12,12 +12,41 @@ function query($query){
 }
 
 function add($data){
-    
+    global $conn;
+    //Ambil data dari table
+    $title = htmlspecialchars($data['name']);
+    $author = htmlspecialchars($data['pengarang']);
+    $availability = htmlspecialchars($data['jumlah']);
+    $category = htmlspecialchars($data['kategori']);
+
+    $query = "INSERT INTO buku VALUES ('','$title','$author','$availability','','$category')";
+    mysqli_query($conn,$query);
+
+    return mysqli_affected_rows($conn);
+}
+function change($data){
+    global $conn;
+    //Ambil data dari table
+    $id = $data['id'];
+    $title = htmlspecialchars($data['name']);
+    $author = htmlspecialchars($data['pengarang']);
+    $availability = htmlspecialchars($data['jumlah']);
+    $category = htmlspecialchars($data['kategori']);
+
+    $query = "UPDATE buku SET 
+                nama = '$title',
+                pengarang = '$author',
+                available = '$availability'
+                WHERE id = '$id'";
+    mysqli_query($conn,$query);
+
+    return mysqli_affected_rows($conn);
 }
 
-function delete($id){
+function deleteb($id){
     global $conn;
-    mysqli_query($conn,"DELETE * FROM buku WHERE id = '$id'");
+    $book = "DELETE FROM buku WHERE id = '$id'";
+    mysqli_query($conn,$book);
 
     return mysqli_affected_rows($conn);
 }
