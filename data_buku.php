@@ -45,6 +45,7 @@ $buku = query("SELECT * FROM buku");
             <th>Ketersediaan</th>
             <th>Kondisi</th>
             <th>Pengarang</th>
+            <th>Kategori</th>
             <th>Aksi</th>
 
             <?php
@@ -59,6 +60,7 @@ $buku = query("SELECT * FROM buku");
                 <td><?=$book["available"]?></td>
                 <td>bagus</td>
                 <td><?=$book["pengarang"]?></td>
+                <td><?=$book["kategori"]?></td>
                 <td>
                     <a href="">edit</a> |
                     <a href="">delete</a>
