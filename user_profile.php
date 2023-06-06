@@ -44,7 +44,7 @@
                     <p>Available</p>
                 </div>
                 <div class="profildiv centering">
-                    <button style="margin-top:15%;">History</button>
+                    <button style="margin-top:15%;"><a href="user_riwayat_peminjaman.php">History</a></button>
                 </div>
                 <div class="profildiv centering">
                     <p>approved</p>
