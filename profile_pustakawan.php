@@ -107,5 +107,8 @@
         </tr>
         </thead>
     </table>
+    <div class="profildiv centering">
+            <a href="user_logout.php"><button style="margin-top:10%;">Logout</button></a>
+    </div>
 </body>
 </html>
