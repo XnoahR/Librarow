@@ -1,3 +1,9 @@
+<?php 
+ include 'functions.php';
+ $category = $_GET['kategori'];
+ $book = query("SELECT * FROM buku WHERE kategori ='$category'");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,9 +39,29 @@
         </div>
     </nav>
 
-    <div class="cattitle">book categories</div>
-
+    <div class="cattitle"><?= $book[0]['kategori'] ?></div>
+    <?php foreach($book as $bk) : ?>
     <div class="blshelf">
+        <div class="blimgcon">
+
+            <img src="img/stevejob.png" alt="">
+        </div>
+        <div class="bltextcon">
+            <div class="bltitle"><?= $bk['nama'] ?></div>
+            <div class="bltextbox">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+            </div>
+            <div class="blauthor"><?= $bk['pengarang'] ?></div>
+            <div class="blbuttoncon"><button class="blbutton"><a href="borrow_book.php">BORROW</a></button></div>
+        </div>
+    </div>
+    <?php endforeach; ?>
+    <!-- <div class="blshelf">
         <div class="blimgcon">
 
             <img src="img/stevejob.png" alt="">
@@ -54,26 +80,7 @@
             <div class="blbuttoncon"><button class="blbutton"><a href="borrow_book.php">BORROW</a></button></div>
         </div>
     </div>
-    <div class="blshelf">
-        <div class="blimgcon">
-
-            <img src="img/stevejob.png" alt="">
-        </div>
-        <div class="bltextcon">
-            <div class="bltitle">TITLE</div>
-            <div class="bltextbox">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-            </div>
-            <div class="blauthor">RAY</div>
-            <div class="blbuttoncon"><button class="blbutton"><a href="borrow_book.php">BORROW</a></button></div>
-        </div>
-    </div>
-    
+     -->
 
 
     </div>

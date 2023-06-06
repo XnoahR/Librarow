@@ -1,3 +1,8 @@
+<?php 
+include 'functions.php';
+$bookcat = query("SELECT * FROM buku");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,43 +44,43 @@
             <div class="bookframe">
                 <img src="img/stevejob.png" alt="">
             </div>
-            <div class="booktitle">Book</div>
-            <div><button><a href="user_page.php">View More</a></button></div>
+            <div class="booktitle">Biograph</div>
+            <div><button><a href="book_list.php?kategori=Biograph">View More</a></button></div>
         </div>
         <div class="catshelf">
             <div class="bookframe">
                 <img src="img/stevejob.png" alt="">
             </div>
-            <div class="booktitle">Book</div>
-            <div><button><a href="user_page.php">View More</a></button></div>
+            <div class="booktitle">Horror</div>
+            <div><button><a href="book_list.php?kategori=Horror">View More</a></button></div>
         </div>
         <div class="catshelf">
             <div class="bookframe">
                 <img src="img/stevejob.png" alt="">
             </div>
-            <div class="booktitle">Book</div>
-            <div><button><a href="user_page.php">View More</a></button></div>
+            <div class="booktitle">Drama</div>
+            <div><button><a href="book_list.php?kategori=Drama">View More</a></button></div>
         </div>
         <div class="catshelf">
             <div class="bookframe">
                 <img src="img/stevejob.png" alt="">
             </div>
-            <div class="booktitle">Book</div>
-            <div><button><a href="user_page.php">View More</a></button></div>
+            <div class="booktitle">Sociology</div>
+            <div><button><a href="book_list.php?kategori=Sociology">View More</a></button></div>
         </div>
         <div class="catshelf">
             <div class="bookframe">
                 <img src="img/stevejob.png" alt="">
             </div>
-            <div class="booktitle">Book</div>
-            <div><button><a href="user_page.php">View More</a></button></div>
+            <div class="booktitle">Romance</div>
+            <div><button><a href="book_list.php?kategori=Romance">View More</a></button></div>
         </div>
         <div class="catshelf">
             <div class="bookframe">
                 <img src="img/stevejob.png" alt="">
             </div>
-            <div class="booktitle">Book</div>
-            <div><button><a href="user_page.php">View More</a></button></div>
+            <div class="booktitle">Comic</div>
+            <div><button><a href="book_list.php?kategori=Comic">View More</a></button></div>
         </div>
         
         
