@@ -32,7 +32,7 @@
         </div>
     </nav>
 
-
+    <!-- Card berisi Profil, History Peminjaman, dan Status -->
     <div class="pucontainer">
         <div class="pupict">
             <img src="img/orang.png" alt="">
@@ -59,7 +59,9 @@
         </div>
     </div>
 
+    <!-- Content Writer -->
     <div class="pucontainer">
+        <!-- Nama -->
         <div class="pubar">
             <div class="putextcon">
                 <div class="putitle">Name</div>
@@ -69,6 +71,7 @@
             <a href="">Edit</a>
             </div>
         </div>
+        <!-- NIM -->
         <div class="pubar">
             <div class="putextcon">
                 <div class="putitle">NIM</div>
@@ -78,6 +81,7 @@
             <a href="">Edit</a>
             </div>
         </div>
+        <!-- Email -->
         <div class="pubar">
             <div class="putextcon">
                 <div class="putitle">Email</div>
@@ -85,6 +89,35 @@
             </div>
             <div class="pueditcon">
             <a href="">Edit</a>
+            </div>
+        </div>
+        <!-- Username -->
+        <div class="pubar">
+            <div class="putextcon">
+                <div class="putitle">Username</div>
+                <div class="puins">None</div>
+            </div>
+            <div class="pueditcon">
+            <a href="">Edit</a>
+            </div>
+        </div>
+        <!-- Password -->
+        <div class="pubar">
+            <div class="putextcon">
+                <div class="putitle">Password</div>
+                <div class="puins">None</div>
+            </div>
+            <div class="pueditcon">
+            <a href="">Edit</a>
+            </div>
+        </div>
+        <div class="pubar">
+            <div class="putextcon">
+                <div class="putitle">Buku yang sedang dipinjam</div>
+                <div class="puins">None</div>
+            </div>
+            <div class="pueditcon">
+            <a href="">View</a>
             </div>
         </div>
         
