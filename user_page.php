@@ -119,6 +119,9 @@
         <div class="bookcontainer">buku 4</div>
         <div class="bookcontainer">buku 5</div>
     </div>
+    <a href="notifikasi_user.php">
+        <img src="img/bell.png" class="notification-icon" alt="Notification Bell">
+    </a>
 
 </body>
 

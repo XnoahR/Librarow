@@ -80,6 +80,9 @@
         
         
     </div>
+    <a href="notifikasi_user.php">
+        <img src="img/bell.png" class="notification-icon" alt="Notification Bell">
+    </a>
 
 
 </body>
