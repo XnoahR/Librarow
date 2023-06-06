@@ -1,3 +1,9 @@
+<?php 
+include 'functions.php';
+$id = $_GET['id'];
+$book = query("SELECT * FROM buku WHERE id ='$id'")[0];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,7 +46,7 @@
         </div>
         <div class="bbtextcon">
             <div class="bbtitle">
-                <p>Steve Job</p>
+                <p><?= $book['nama'] ?></p>
             </div>
             <div class="bbdesc">
                 <p><b>Description</b></p>
@@ -52,11 +58,11 @@
             </div>
             <div class="bbauthor">
                 <div class="authtxt">Author</div>
-                <p>Charles Xavier</p>
+                <p><?= $book['pengarang'] ?></p>
             </div>
             <div class="bbava">
                 <div class="avatxt">Available Book</div>
-                <p>5</p>
+                <p><?= $book['available'] ?></p>
             </div>
             
         </div>

@@ -57,7 +57,7 @@
 
             </div>
             <div class="blauthor"><?= $bk['pengarang'] ?></div>
-            <div class="blbuttoncon"><button class="blbutton"><a href="borrow_book.php">BORROW</a></button></div>
+            <div class="blbuttoncon"><button class="blbutton"><a href="borrow_book.php?id=<?= $bk['id'] ?>">BORROW</a></button></div>
         </div>
     </div>
     <?php endforeach; ?>
