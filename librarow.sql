@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 30, 2023 at 09:47 AM
+-- Generation Time: Jun 06, 2023 at 10:58 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -32,20 +32,23 @@ CREATE TABLE `buku` (
   `nama` varchar(50) NOT NULL,
   `pengarang` varchar(50) NOT NULL,
   `available` int(11) NOT NULL,
-  `sampul` blob DEFAULT NULL
+  `sampul` blob DEFAULT NULL,
+  `kategori` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `buku`
 --
 
-INSERT INTO `buku` (`id`, `nama`, `pengarang`, `available`, `sampul`) VALUES
-(6, 'December', 'Neck', 5, NULL),
-(7, 'Wake Me Up When September Ends', 'Green Day', 10, NULL),
-(8, 'Bored to Death', 'blink', 7, NULL),
-(9, 'Together for the Kids', 'blink', 5, NULL),
-(10, 'Yellow', 'Gura', 4, NULL),
-(11, 'Lost Kitten', 'Ryou', 1, NULL);
+INSERT INTO `buku` (`id`, `nama`, `pengarang`, `available`, `sampul`, `kategori`) VALUES
+(6, 'December', 'Neck', 5, NULL, 'Biograph'),
+(7, 'Wake Me Up When September Ends', 'Green Day', 10, NULL, 'Biograph'),
+(8, 'Bored to Death', 'blink', 7, NULL, 'Horror'),
+(9, 'Together for the Kids', 'blink', 5, NULL, 'Drama'),
+(10, 'Yellow', 'Gawr Gura', 4, NULL, 'Sociology'),
+(11, 'Lost Kitten', 'Ryou', 1, NULL, 'Romance'),
+(15, 'Soeharto', 'Aidit', 6, '', 'Biograph'),
+(16, 'Naruto', 'Masashi Kishimoto', 2, '', 'Comic');
 
 -- --------------------------------------------------------
 
@@ -80,6 +83,7 @@ CREATE TABLE `pustakawan` (
 
 INSERT INTO `pustakawan` (`username`, `password`, `nama`, `email`, `nohp`, `foto`) VALUES
 ('billie', 'joe', 'billie joe', 'bjarsmtrong@librarian.uns.ac.id', '0859999999', NULL),
+('joe', 'sam', 'joe', 'bjj@librarian.uns.ac.id', '081111112333', NULL),
 ('tulus', 'admin', 'Tulus Toto Raharjo', 'TulusTR@librarian.uns.ac.id', '089655847697', NULL);
 
 -- --------------------------------------------------------
@@ -89,12 +93,13 @@ INSERT INTO `pustakawan` (`username`, `password`, `nama`, `email`, `nohp`, `foto
 --
 
 CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
   `username` varchar(20) NOT NULL,
   `password` varchar(50) NOT NULL,
   `nama` varchar(50) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `nohp` varchar(15) NOT NULL,
-  `nim` varchar(10) NOT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `nohp` varchar(15) DEFAULT NULL,
+  `nim` varchar(10) DEFAULT NULL,
   `status` enum('aktif','suspend') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -102,9 +107,9 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`username`, `password`, `nama`, `email`, `nohp`, `nim`, `status`) VALUES
-('ray', '123', 'raychi', 'raychi@student.uns.ac.id', '085853911431', 'M0521099', 'suspend'),
-('rio', 'user', 'Rio Saputro', 'rio.ae23@student.uns.ac.id', '085331886336', 'M0521065', 'aktif');
+INSERT INTO `user` (`id`, `username`, `password`, `nama`, `email`, `nohp`, `nim`, `status`) VALUES
+(3, 'ray', 'chi', 'Rio', '', '', '', 'aktif'),
+(4, 'zzz', 'kkk', 'xyz', '', '', '', 'aktif');
 
 --
 -- Indexes for dumped tables
@@ -126,7 +131,7 @@ ALTER TABLE `pustakawan`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`username`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -136,7 +141,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `buku`
 --
 ALTER TABLE `buku`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
