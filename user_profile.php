@@ -61,34 +61,28 @@
 
     <!-- Content Writer -->
     <div class="pucontainer">
+    <div class="pueditcon">
+            <a href="user_edit_profile.php">Edit Profile</a>
+            </div>
         <!-- Nama -->
         <div class="pubar">
             <div class="putextcon">
                 <div class="putitle">Name</div>
-                <div class="puins">Rio Saputro</div>
-            </div>
-            <div class="pueditcon">
-            <a href="user_edit_profile.php">Edit</a>
+                <div class="puins">None</div>
             </div>
         </div>
         <!-- NIM -->
         <div class="pubar">
             <div class="putextcon">
                 <div class="putitle">NIM</div>
-                <div class="puins">M0521065</div>
-            </div>
-            <div class="pueditcon">
-            <a href="user_edit_profile.php">Edit</a>
+                <div class="puins">None</div>
             </div>
         </div>
         <!-- Email -->
         <div class="pubar">
             <div class="putextcon">
                 <div class="putitle">Email</div>
-                <div class="puins">rio.ae23@student.uns.ac.id</div>
-            </div>
-            <div class="pueditcon">
-            <a href="user_edit_profile.php">Edit</a>
+                <div class="puins">None</div>
             </div>
         </div>
         <!-- Username -->
@@ -97,18 +91,12 @@
                 <div class="putitle">Username</div>
                 <div class="puins">None</div>
             </div>
-            <div class="pueditcon">
-            <a href="user_edit_profile.php">Edit</a>
-            </div>
         </div>
         <!-- Password -->
         <div class="pubar">
             <div class="putextcon">
                 <div class="putitle">Password</div>
                 <div class="puins">None</div>
-            </div>
-            <div class="pueditcon">
-            <a href="user_edit_profile.php">Edit</a>
             </div>
         </div>
         <div class="pubar">
@@ -117,7 +105,7 @@
                 <div class="puins">None</div>
             </div>
             <div class="pueditcon">
-            <a href="">View</a>
+            <a href="user_pengembalian_buku.php">Return Book</a>
             </div>
         </div>
         

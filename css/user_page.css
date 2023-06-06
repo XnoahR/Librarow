@@ -361,3 +361,64 @@
     margin-left: 45%;
     text-align: center;
   }
+
+  /* User_Pengembalian_Buku */
+  /* /////////////////////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////// */
+  
+  h1 {
+    color: #333333;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  td {
+    padding: 10px;
+  }
+  
+  .form-label-judul {
+    display: block;
+    font-weight: bold;
+  }
+  
+  .form-input-judul {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+  
+  ul.judul-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  ul.judul-list li input[type="text"] {
+    margin-right: 10px;
+  }
+  
+  ul.judul-list li button.form-button-kembalikan {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  ul.judul-list li button.form-button-kembalikan:hover {
+    background-color: #45a049;
+  }
+
+  ul.judul-list li p {
+    margin: 0;
+    padding: 5px;
+    background-color: #ffffff;
+  }
+
+  .form-submit:hover {
+    background-color: #4c6ed7;
+  }
