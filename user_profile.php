@@ -1,3 +1,11 @@
+<?php 
+include 'functions.php';
+session_start();
+if(!isset($_SESSION["login"])){
+    header("Location:login.php");
+    exit;
+} 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,7 +64,7 @@
                 </div>
             </div>
             <div class="profildiv centering">
-            <a href="login.php"><button style="margin-top:10%;">Logout</button></a>
+            <a href="user_logout.php"><button style="margin-top:10%;">Logout</button></a>
             </div>
         </div>
     </div>
@@ -91,14 +99,14 @@
         <div class="pubar">
             <div class="putextcon">
                 <div class="putitle">Username</div>
-                <div class="puins">None</div>
+                <div class="puins"><?= $_COOKIE['username'] ?></div>
             </div>
         </div>
         <!-- Password -->
         <div class="pubar">
             <div class="putextcon">
                 <div class="putitle">Password</div>
-                <div class="puins">None</div>
+                <div class="puins"><?= $_COOKIE['password'] ?></div>
             </div>
         </div>
         <div class="pubar">
