@@ -146,7 +146,13 @@ td {
 }
 
 .addbookbox ul{
-  display: block;
   list-style-type: none;
+}
+.ilbl{
+  display: inline-block !important;
+}
 
+.addbookbox label{
+  display:block;
+  
 }

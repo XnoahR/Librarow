@@ -1,11 +1,13 @@
 <?php 
 include 'functions.php';
+$id = $_GET['id'];
+$book = query("SELECT * FROM buku WHERE id = '$id'")[0];
 
 if(isset($_POST["submit"])){
    
-    if(add($_POST) > 0){
+    if(change($_POST) > 0){
         echo "<script>
-        alert('Data berhasil ditambahkan');
+        alert('Data berhasil diubah');
         document.location.href = 'data_buku.php';
         </script>";
     }else{
@@ -51,38 +53,23 @@ if(isset($_POST["submit"])){
         <div class="insidebookbox">
             <form action="" method="post">
             <ul>
+                <input type="hidden" name="id" id="id" value="<?=$book["id"]?>">
                 <li>
                 <label for="name">Judul Buku: </label>
-            <input type="text" name="name" id="name">
+            <input type="text" name="name" id="name" value="<?=$book["nama"]?>">
                 </li>
                 <li>
                 <label for="pengarang">Pengarang: </label>
-            <input type="text" name="pengarang" id="pengarang">
+            <input type="text" name="pengarang" id="pengarang" value="<?=$book["pengarang"]?>">
                 </li>
+
                 <li>
                 <label for="jumlah">Jumlah Buku: </label>
-            <input type="number" name="jumlah" id="jumlah">
+            <input type="number" name="jumlah" id="jumlah" value="<?=$book["available"]?>">
                 </li>
             
-           <label for="kategori">Kategori Buku:</label>
-          <li>
-            <input type="radio" name="kategori" id="Horror" value="Horror">
-            <label for="kategori" class="ilbl">Horor</label>
-            <input type="radio" name="kategori" id="Drama" value="Drama">
-            <label for="kategori" class="ilbl">Drama</label>
-            <input type="radio" name="kategori" id="Biograph" value="Biograph">
-            <label for="kategori" class="ilbl">Biograph</label>
-            <input type="radio" name="kategori" id="Sociology" value="Sociology">
-            <label for="kategori" class="ilbl">Sociology</label>
-            </li>
-          <li>
-            <input type="radio" name="kategori" id="Romance" value="Romance">
-            <label for="kategori" class="ilbl">Romance</label>
-            <input type="radio" name="kategori" id="Comic" value="Comic">
-            <label for="kategori" class="ilbl">Comic</label>
-            </li>
             <li>
-                <button type="submit" name="submit">Add Book</button>
+                <button type="submit" name="submit">Save Changes</button>
             </li>
             </ul>
             </form>
