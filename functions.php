@@ -11,6 +11,10 @@ function query($query){
     return $row;
 }
 
+function add($data){
+    
+}
+
 function delete($id){
     global $conn;
     mysqli_query($conn,"DELETE * FROM buku WHERE id = '$id'");
