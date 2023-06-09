@@ -1,12 +1,28 @@
 <?php 
 include 'functions.php';
 session_start();
+$id = $_GET['id'];
+$book = query("SELECT * FROM buku WHERE id ='$id'")[0];
+$booktitle = $book['nama'];
+$username = $_COOKIE['username'];
+$user = query("SELECT * FROM user WHERE username = '$username'")[0];
+$id_user= $user['id'];
+
+if(isset($_POST['submit'])){
+    if(borrow($_POST) > 0){
+    echo "<script>
+    alert('Buku berhasil dipinjam');
+    </script>";
+    }
+    else{
+        echo "Data ERROR!";
+    }
+}
+
 if(!isset($_SESSION["login"])){
     header("Location:login.php");
     exit;
 } 
-$id = $_GET['id'];
-$book = query("SELECT * FROM buku WHERE id ='$id'")[0];
 ?>
 
 <!DOCTYPE html>
@@ -73,7 +89,12 @@ $book = query("SELECT * FROM buku WHERE id ='$id'")[0];
         </div>
     </div>
 
-    <button class="buttonbb">Borrow</button>
+    <form action="" method="post">
+        <input type="hidden" name="id_user"id="id_user" value="<?=$id_user?>">
+        <input type="hidden" name="id_buku"id="id_buku" value="<?=$id?>">
+        <input type="hidden" name="username_admin"id="username_admin" value="tulus">
+        <button class="buttonbb" type="submit" name="submit" onclick="return confirm('Pinjam buku <?=$booktitle?>?');">Borrow</button>
+    </form>
 
 <br><br>
 </body>

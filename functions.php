@@ -71,4 +71,13 @@ function register($data){
     return(mysqli_affected_rows($conn));
 }
 
+function borrow($data){
+global $conn;
+$id_pinjam = '';
+$id_user = $data['id_user'];
+$id_buku = $data['id_buku'];
+$username_admin = $data['username_admin'];
+mysqli_query($conn,"INSERT INTO peminjaman VALUES ('$id_pinjam','$id_user','$id_buku','$username_admin','','','pending')");
+return mysqli_affected_rows($conn);
+}
 ?>

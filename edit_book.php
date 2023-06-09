@@ -67,6 +67,10 @@ if(isset($_POST["submit"])){
                 <label for="jumlah">Jumlah Buku: </label>
             <input type="number" name="jumlah" id="jumlah" value="<?=$book["available"]?>">
                 </li>
+                <li>
+                <label for="sampul">Sampul Buku: </label>
+            <input type="text" name="sampul" id="sampul" value="<?=$book["sampul"]?>">
+                </li>
             
             <li>
                 <button type="submit" name="submit">Save Changes</button>
