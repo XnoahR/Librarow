@@ -55,7 +55,7 @@ $buku = query("SELECT * FROM buku");
 
             <tr>
                 <td><?=$i;?></td>
-                <td><?=$book["sampul"]?></td>
+                <td><img src="img/<?=$book["sampul"]?>" alt="<?=$book["nama"]?>"width="50"></td>
                 <td><?=$book["nama"]?></td>
                 <td><?=$book["available"]?></td>
                 

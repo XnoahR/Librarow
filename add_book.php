@@ -1,17 +1,16 @@
-<?php 
+<?php
 include 'functions.php';
 
-if(isset($_POST["submit"])){
-   
-    if(add($_POST) > 0){
+if (isset($_POST["submit"])) {
+
+    if (add($_POST) > 0) {
         echo "<script>
         alert('Data berhasil ditambahkan');
         document.location.href = 'data_buku.php';
         </script>";
-    }else{
+    } else {
         echo "Data error";
-        }
-
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -49,45 +48,50 @@ if(isset($_POST["submit"])){
     <!-- Tab Container -->
     <div class="addbookbox">
         <div class="insidebookbox">
-            <form action="" method="post">
-            <ul>
-                <li>
-                <label for="name">Judul Buku: </label>
-            <input type="text" name="name" id="name">
-                </li>
-                <li>
-                <label for="pengarang">Pengarang: </label>
-            <input type="text" name="pengarang" id="pengarang">
-                </li>
-                <li>
-                <label for="jumlah">Jumlah Buku: </label>
-            <input type="number" name="jumlah" id="jumlah">
-                </li>
-            
-           <label for="kategori">Kategori Buku:</label>
-          <li>
-            <input type="radio" name="kategori" id="Horror" value="Horror">
-            <label for="kategori" class="ilbl">Horor</label>
-            <input type="radio" name="kategori" id="Drama" value="Drama">
-            <label for="kategori" class="ilbl">Drama</label>
-            <input type="radio" name="kategori" id="Biograph" value="Biograph">
-            <label for="kategori" class="ilbl">Biograph</label>
-            <input type="radio" name="kategori" id="Sociology" value="Sociology">
-            <label for="kategori" class="ilbl">Sociology</label>
-            </li>
-          <li>
-            <input type="radio" name="kategori" id="Romance" value="Romance">
-            <label for="kategori" class="ilbl">Romance</label>
-            <input type="radio" name="kategori" id="Comic" value="Comic">
-            <label for="kategori" class="ilbl">Comic</label>
-            </li>
-            <li>
-                <button type="submit" name="submit">Add Book</button>
-            </li>
-            </ul>
+            <form action="" method="post" enctype="multipart/form-data">
+                <ul>
+                    <li>
+                        <label for="name">Judul Buku: </label>
+                        <input type="text" name="name" id="name">
+                    </li>
+                    <li>
+                        <label for="pengarang">Pengarang: </label>
+                        <input type="text" name="pengarang" id="pengarang">
+                    </li>
+                    <li>
+                        <label for="jumlah">Jumlah Buku: </label>
+                        <input type="number" name="jumlah" id="jumlah">
+                    </li>
+                    <li>
+                        <label for="sampul">Sampul Buku: </label>
+                        <input type="file" name="sampul" id="sampul">
+                    </li>
+
+                    <label for="kategori">Kategori Buku:</label>
+                    <li>
+                        <input type="radio" name="kategori" id="Horror" value="Horror">
+                        <label for="kategori" class="ilbl">Horor</label>
+                        <input type="radio" name="kategori" id="Drama" value="Drama">
+                        <label for="kategori" class="ilbl">Drama</label>
+                        <input type="radio" name="kategori" id="Biograph" value="Biograph">
+                        <label for="kategori" class="ilbl">Biograph</label>
+                        <input type="radio" name="kategori" id="Sociology" value="Sociology">
+                        <label for="kategori" class="ilbl">Sociology</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="kategori" id="Romance" value="Romance">
+                        <label for="kategori" class="ilbl">Romance</label>
+                        <input type="radio" name="kategori" id="Comic" value="Comic">
+                        <label for="kategori" class="ilbl">Comic</label>
+                    </li>
+                    <li>
+                        <button type="submit" name="submit">Add Book</button>
+                    </li>
+                </ul>
             </form>
         </div>
     </div>
 
 </body>
+
 </html>

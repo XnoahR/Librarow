@@ -11,7 +11,10 @@ if(isset($_POST["submit"])){
         document.location.href = 'data_buku.php';
         </script>";
     }else{
-        echo "Data error";
+        echo "<script>
+        alert('Data tetap sama');
+        document.location.href = 'data_buku.php';
+        </script>";
         }
 
 }
@@ -51,9 +54,11 @@ if(isset($_POST["submit"])){
     <!-- Tab Container -->
     <div class="addbookbox">
         <div class="insidebookbox">
-            <form action="" method="post">
+            <form action="" method="post" enctype="multipart/form-data">
             <ul>
                 <input type="hidden" name="id" id="id" value="<?=$book["id"]?>">
+                <input type="hidden" name="sampullama" id="sampullama" value="<?=$book["sampul"]?>">
+                <input type="hidden" name="kategori" id="kategori" value="<?=$book['kategori']?>">
                 <li>
                 <label for="name">Judul Buku: </label>
             <input type="text" name="name" id="name" value="<?=$book["nama"]?>">
@@ -68,8 +73,9 @@ if(isset($_POST["submit"])){
             <input type="number" name="jumlah" id="jumlah" value="<?=$book["available"]?>">
                 </li>
                 <li>
-                <label for="sampul">Sampul Buku: </label>
-            <input type="text" name="sampul" id="sampul" value="<?=$book["sampul"]?>">
+                <label for="sampul">Sampul Buku: </label> <br>
+                <img src="img/<?=$book["sampul"]?>" width="50" alt="<?=$book['nama']?>">
+            <input type="file" name="sampul" id="sampul" >
                 </li>
             
             <li>

@@ -19,11 +19,65 @@ function add($data){
     $availability = htmlspecialchars($data['jumlah']);
     $category = htmlspecialchars($data['kategori']);
 
-    $query = "INSERT INTO buku VALUES ('','$title','$author','$availability','','$category')";
+    //upload cover
+    $cover = upload();
+    if(!$cover){
+        return false;
+    }
+    // $cover = htmlspecialchars($data['sampul']);
+
+    $query = "INSERT INTO buku VALUES ('','$title','$author','$availability','$cover','$category')";
     mysqli_query($conn,$query);
 
     return mysqli_affected_rows($conn);
 }
+
+function upload(){
+    $fileName = $_FILES['sampul']['name'];
+    $fileSize = $_FILES['sampul']['size'];
+    $fileError = $_FILES['sampul']['error'];
+    $fileTmp = $_FILES['sampul']['tmp_name'];
+
+    //file upload check 
+    if($fileError === 4){
+        echo "<script>
+        alert('Upload gambar dahulu!');
+        </script>
+        ";
+        return false;
+    }
+    //img file only
+    $validFileExtension = ['jpg','jpeg','png'];
+    $fileExtension = explode('.',$fileName);
+    $fileExtension = strtolower(end($fileExtension));
+    if(!in_array($fileExtension,$validFileExtension)){
+        echo "<script>
+        alert('Tipe File salah!');
+        </script>
+        ";
+        return false;
+    }
+
+    //file size limit
+    if($fileSize > 3145728){
+        echo "<script>
+        alert('File max 3MB!');
+        </script>
+        ";
+        return false;
+    }
+
+    //New file name
+    $fileNewName = uniqid();
+    $fileNewName .= '.';
+    $fileNewName .= $fileExtension;
+
+    //file success
+    move_uploaded_file($fileTmp,'img/'.$fileNewName);
+    return $fileNewName;
+}
+
+
 function change($data){
     global $conn;
     //Ambil data dari table
@@ -32,11 +86,20 @@ function change($data){
     $author = htmlspecialchars($data['pengarang']);
     $availability = htmlspecialchars($data['jumlah']);
     $category = htmlspecialchars($data['kategori']);
+    $oldCover = htmlspecialchars($data['sampullama']);
 
+    if($_FILES['sampul']['error'] === 4){
+        $cover = $oldCover;
+    }
+    else{
+        $cover = upload();
+    }
+    
     $query = "UPDATE buku SET 
                 nama = '$title',
                 pengarang = '$author',
-                available = '$availability'
+                available = '$availability',
+                sampul = '$cover'
                 WHERE id = '$id'";
     mysqli_query($conn,$query);
 

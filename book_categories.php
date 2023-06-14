@@ -54,35 +54,35 @@ $bookcat = query("SELECT * FROM buku");
         </div>
         <div class="catshelf">
             <div class="bookframe">
-                <img src="img/stevejob.png" alt="">
+                <img src="img/horror.jpg" alt="">
             </div>
             <div class="booktitle">Horror</div>
             <div><button><a href="book_list.php?kategori=Horror">View More</a></button></div>
         </div>
         <div class="catshelf">
             <div class="bookframe">
-                <img src="img/stevejob.png" alt="">
+                <img src="img/drama.jpg" alt="">
             </div>
             <div class="booktitle">Drama</div>
             <div><button><a href="book_list.php?kategori=Drama">View More</a></button></div>
         </div>
         <div class="catshelf">
             <div class="bookframe">
-                <img src="img/stevejob.png" alt="">
+                <img src="img/socio.jpg" alt="">
             </div>
             <div class="booktitle">Sociology</div>
             <div><button><a href="book_list.php?kategori=Sociology">View More</a></button></div>
         </div>
         <div class="catshelf">
             <div class="bookframe">
-                <img src="img/stevejob.png" alt="">
+                <img src="img/romance.jpg" alt="">
             </div>
             <div class="booktitle">Romance</div>
             <div><button><a href="book_list.php?kategori=Romance">View More</a></button></div>
         </div>
         <div class="catshelf">
             <div class="bookframe">
-                <img src="img/stevejob.png" alt="">
+                <img src="img/comic.jpg" alt="">
             </div>
             <div class="booktitle">Comic</div>
             <div><button><a href="book_list.php?kategori=Comic">View More</a></button></div>

@@ -49,7 +49,7 @@ if(!isset($_SESSION["login"])){
     <div class="blshelf">
         <div class="blimgcon">
 
-            <img src="img/stevejob.png" alt="">
+            <img src="img/<?=$bk['sampul']?>" alt="">
         </div>
         <div class="bltextcon">
             <div class="bltitle"><?= $bk['nama'] ?></div>

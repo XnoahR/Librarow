@@ -62,7 +62,7 @@ if(!isset($_SESSION["login"])){
     <div class="bbcontainer">
         <div class="bbframe">
             <div class="bbimgcon">
-                <img src="img/stevejob.png" alt="">
+                <img src="img/<?=$book['sampul']?>" alt="">
             </div>
         </div>
         <div class="bbtextcon">
