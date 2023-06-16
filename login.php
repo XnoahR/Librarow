@@ -54,7 +54,9 @@ if(isset($_POST["login"])){
 <body>
     <div class="logincontainer">
         <div class="circle">
-            <div class="logo">xxx </div>
+            <div class="logo">
+                <img src="img/logo.png" width="30" alt="logo">
+            </div>
         </div>
         <div class="title">LOGIN</div>
         <!-- sementara -->
