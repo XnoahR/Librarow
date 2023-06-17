@@ -159,6 +159,31 @@
   animation: rainbow-animation 4s infinite;
 }
 
+.carousel-inner {
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: rgb(113, 198, 147);
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.running-text {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.carousel-item {
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 
   .notification-icon {
     position: fixed;
