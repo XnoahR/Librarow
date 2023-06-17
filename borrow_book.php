@@ -92,7 +92,7 @@ if(!isset($_SESSION["login"])){
     <form action="" method="post">
         <input type="hidden" name="id_user"id="id_user" value="<?=$id_user?>">
         <input type="hidden" name="id_buku"id="id_buku" value="<?=$id?>">
-        <input type="hidden" name="username_admin"id="username_admin" value="tulus">
+        <input type="hidden" name="id_pustakawan"id="id_pustakawan" value="1">
         <button class="buttonbb" type="submit" name="submit" onclick="return confirm('Pinjam buku <?=$booktitle?>?');">Borrow</button>
     </form>
 

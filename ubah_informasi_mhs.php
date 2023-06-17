@@ -5,8 +5,21 @@ if(!isset($_SESSION["admin"])){
     header("Location:login.php");
     exit;
 } 
-$pustakawan = query("SELECT * FROM pustakawan");
+$id = $_GET['id'];
+$mahasiswa = query("SELECT * FROM user WHERE id = '$id'")[0];
+$peminjaman = query("SELECT id_buku FROM peminjaman WHERE id_user = '$id' AND status_peminjaman = 'dipinjam'");
+$info_buku = array(); // Create an empty array to store the book names
+
+foreach ($peminjaman as $kodebuku) {
+    $id_buku = $kodebuku['id_buku'];
+    $book = query("SELECT nama FROM buku WHERE id = '$id_buku'")[0];
+    $info_buku[] = $book['nama']; // Store the book name in the array
+}
+
+
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,6 +29,7 @@ $pustakawan = query("SELECT * FROM pustakawan");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Librarow</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-utilities.min.css">
     <link rel="stylesheet" href="css/admin_page.css">
 </head>
 
@@ -37,38 +51,7 @@ $pustakawan = query("SELECT * FROM pustakawan");
         </div>
     </nav>
 
-    <div class="datacontainer">
-        <div class="datatitle">Data Admin</div>
-        <div class="datasearch">Search
-            <input type="text" name="search" id="search">
-        </div>
-
-        <table border="1px solid" width="85%" style="border-collapse:collapse;margin:auto;">
-            <th>No</th>
-            <th>Foto</th>
-            <th>Nama</th>
-            <th>Username</th>
-            <th>Email</th>
-            <th>Password</th>
-
-
-            <?php
-            $i = 1;
-            ?>
-            <?php foreach($pustakawan as $lib) : ?>
-
-            <tr>
-                <td><?=$i;?></td>
-                <td><?=$lib["foto"]?></td>
-                <td><?=$lib["nama"]?></td>
-                <td><?=$lib["username"]?></td>
-                <td><?=$lib["email"]?></td>
-                <td><?=$lib["password"]?></td>
-            </tr>
-            <?php $i++;?>
-            <?php endforeach;?>
-        </table>
-    </div>
+   
 </body>
 
 </html>

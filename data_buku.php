@@ -1,6 +1,23 @@
 <?php
 include 'functions.php';
+session_start();
+if(!isset($_SESSION["admin"])){
+    header("Location:login.php");
+    exit;
+} 
 $buku = query("SELECT * FROM buku");
+
+$dataLimitPerPage = 5;
+$dataTotal = count($buku);
+$pageTotal = ceil($dataTotal / $dataLimitPerPage);
+$activePage = (isset($_GET['page'])) ? $_GET['page'] : 1;
+$dataStart = ($dataLimitPerPage * $activePage) - $dataLimitPerPage;
+if (isset($_POST['cari'])) {
+    $keyword = $_POST['keyword'];
+    $buku = query("SELECT * FROM buku WHERE nama LIKE '%$keyword%' LIMIT $dataStart, $dataLimitPerPage");
+} else {
+    $buku = query("SELECT * FROM buku LIMIT $dataStart, $dataLimitPerPage");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,8 +51,11 @@ $buku = query("SELECT * FROM buku");
 
     <div class="datacontainer">
         <div class="datatitle">Data Buku</div>
-        <div class="datasearch">Search
-            <input type="text" name="search" id="search">
+        <div class="datasearch">
+        <form action="" method="post">
+                <input type="text" name="keyword" id="keyword" size="25" autocomplete="off" placeholder="Cari Buku">
+                <button class="btn-sm btn-outline-success" type="submit" name="cari">Cari</button>
+            </form>
         </div>
         <a href="add_book.php">Tambah Buku</a>
         <table border="1px solid" width="95%" style="border-collapse:collapse;margin:auto;">
@@ -43,7 +63,6 @@ $buku = query("SELECT * FROM buku");
             <th>Sampul</th>
             <th>Judul</th>
             <th>Ketersediaan</th>
-          
             <th>Pengarang</th>
             <th>Kategori</th>
             <th>Aksi</th>
@@ -69,6 +88,20 @@ $buku = query("SELECT * FROM buku");
             <?php $i++;?>
             <?php endforeach;?>
         </table>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <?php if ($activePage > 1) : ?>
+                    <li class="page-item"><a class="page-link" href="?page=<?= $activePage -= 1; ?>"><</a>
+                    </li>
+                <?php endif; ?>
+                <?php for ($i = 1; $i <= $pageTotal; $i++) : ?>
+                    <li class="page-item"><a class="page-link" href="?page=<?= $i; ?>"><?= $i ?></a></li>
+                <?php endfor; ?>
+                <?php if ($activePage < $pageTotal) : ?>
+                    <li class="page-item"><a class="page-link" href="?page=<?= $activePage += 1; ?>">></a></li>
+                <?php endif; ?>
+            </ul>
+        </nav>
     </div>
 </body>
 

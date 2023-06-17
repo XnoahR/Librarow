@@ -139,8 +139,27 @@ global $conn;
 $id_pinjam = '';
 $id_user = $data['id_user'];
 $id_buku = $data['id_buku'];
-$username_admin = $data['username_admin'];
-mysqli_query($conn,"INSERT INTO peminjaman VALUES ('$id_pinjam','$id_user','$id_buku','$username_admin','','','pending')");
+$id_pustakawan = $data['id_pustakawan'];
+mysqli_query($conn,"INSERT INTO peminjaman VALUES ('$id_pinjam','$id_user','$id_pustakawan','$id_buku','','','pending')");
 return mysqli_affected_rows($conn);
+}
+
+function ChangeStatus($data){
+    global $conn;
+    $status = $data['status'];
+    $id = $data['id'];
+
+    mysqli_query($conn,"UPDATE user SET 
+            status = '$status'
+            WHERE id = '$id'
+    ");
+
+    return mysqli_affected_rows($conn);
+}
+
+function SearchMhs($keyword){
+    global $conn;
+    $query = "SELECT * FROM user WHERE nama LIKE '%$keyword%' OR nim LIKE '%$keyword%'";
+    return query($query);
 }
 ?>
