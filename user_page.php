@@ -17,6 +17,24 @@ if(!isset($_SESSION["login"])){
     <title>Librarow</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/user_page.css">
+    <style>
+        .button1:hover {
+            animation: pop-up 0.3s ease;
+            background-color: lightgreen;
+            }
+
+            @keyframes pop-up {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }   
+    </style>
 </head>
 
 <body style="background-color: #D0D0D0;">
@@ -24,7 +42,7 @@ if(!isset($_SESSION["login"])){
     <!--Navbar-->
     <nav class="navbar sticky-top navbar-expand-sm navbar-dark" style="color: #D0EFFF;">
         <div class="container-fluid ">
-            <a class="navbar-brand " href="#">LIBRAROW</a>
+            <a class="navbar-brand " href="#"><img src="img/logo.png" alt="logo" width="30"> LIBRAROW</a>
             <div class="nav navbar-custom" id="navbarSupportedContent" style="color: #D0EFFF !important;">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
