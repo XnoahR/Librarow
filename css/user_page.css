@@ -24,6 +24,28 @@
     color: #d0efff !important;
   }
 
+.nav-link {
+    position: relative;
+    transition: all 0.3s;
+    }
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #fff;
+    transform: scaleX(0);
+    transition: transform 0.3s;
+    }
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+    }
+
+
   /* Home User */
   /* /////////////////////////////////////////////////////////////////////////
   /////////////////////////////////////////////////////////////////////////////
@@ -89,6 +111,55 @@
     text-decoration: none;
   }
 
+  .button1:hover {
+    animation: pop-up 0.3s ease;
+    background-color: lightgreen;
+    }
+
+    @keyframes pop-up {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes rainbow-animation {
+  0% {
+    color: red;
+  }
+  14% {
+    color: orange;
+  }
+  28% {
+    color: yellow;
+  }
+  42% {
+    color: green;
+  }
+  57% {
+    color: blue;
+  }
+  71% {
+    color: indigo;
+  }
+  85% {
+    color: violet;
+  }
+  100% {
+    color: red;
+  }
+}
+
+.bstitle {
+  animation: rainbow-animation 4s infinite;
+}
+
+
   .notification-icon {
     position: fixed;
     bottom: 20px;
@@ -96,8 +167,12 @@
     width: 50px;
     height: 50px;
     cursor: pointer;
+    transition: transform 0.3s;
   }
-  
+
+  .notification-icon:hover {
+    transform: rotate(360deg);
+    }
 
   /* Book Categories */
   /* /////////////////////////////////////////////////////////////////////////

@@ -1,12 +1,47 @@
-<?php 
+<?php
 include 'functions.php';
 session_start();
-if(!isset($_SESSION["login"])){
-    header("Location:login.php");
-    exit;
-} 
 
+// Cek apakah pengguna sudah login
+if (!isset($_SESSION["login"])) {
+    header("Location: login.php");
+    exit;
+}
+
+// Cek apakah modal sudah ditampilkan sebelumnya
+if (!isset($_SESSION['modalShown'])) {
+    // Setel session bahwa modal sudah ditampilkan
+    $_SESSION['modalShown'] = true;
+
+    // Tampilkan modal
+    echo '
+    <div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="notificationModalLabel">Librarow</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Welcome to our website. Please feel free to check out the books we have available. If you like it, you can borrow it. We will be happy to serve you, have a nice day.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var myModal = new bootstrap.Modal(document.getElementById("notificationModal"));
+            myModal.show();
+        });
+    </script>
+    ';
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,55 +52,13 @@ if(!isset($_SESSION["login"])){
     <title>Librarow</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/user_page.css">
-    <style>
-        /* Navbar */
-        .nav-link {
-            position: relative;
-            transition: all 0.3s;
-            }
-
-        .nav-link::after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            bottom: -2px;
-            left: 0;
-            background-color: #fff;
-            transform: scaleX(0);
-            transition: transform 0.3s;
-            }
-
-        .nav-link:hover::after {
-            transform: scaleX(1);
-            }
-
-        /* Button */
-        .button1:hover {
-            animation: pop-up 0.3s ease;
-            background-color: lightgreen;
-            }
-
-            @keyframes pop-up {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }   
-    </style>
 </head>
 
 <body style="background-color: #D0D0D0;">
-
     <!--Navbar-->
     <nav class="navbar sticky-top navbar-expand-sm navbar-dark" style="color: #D0EFFF;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="img/logo.png" alt="logo" width="30"> LIBRAROW</a>
+            <a class="navbar-brand" href="user_page.php"><img src="img/logo.png" alt="logo" width="30"> LIBRAROW</a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
@@ -173,7 +166,6 @@ if(!isset($_SESSION["login"])){
 
 <!-- Script Bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 
 </html>
