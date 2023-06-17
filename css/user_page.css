@@ -252,7 +252,23 @@
     font-weight: bold;
     margin-top: 2px;
   }
-
+  
+  .catshelf {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .bookframe {
+    margin-bottom: 10px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+  }
+  
   .catshelf button {
     background-color: #2a9df4;
     color: white;
@@ -271,7 +287,15 @@
     color: white;
     text-decoration: none;
   }
-
+  .btn-pop-up {
+    transition: transform 0.3s ease;
+  }
+  
+  .btn-pop-up:hover {
+    transform: scale(1.1);
+    background-color: lightgreen;
+  }
+  
   /* Profile User */
   /* /////////////////////////////////////////////////////////////////////////
   /////////////////////////////////////////////////////////////////////////////

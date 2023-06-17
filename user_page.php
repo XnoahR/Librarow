@@ -74,6 +74,8 @@ if (!isset($_SESSION['modalShown'])) {
             </div>
         </div>
     </nav>
+
+    <!-- Running Text -->
     <div id="running-text-carousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -82,6 +84,7 @@ if (!isset($_SESSION['modalShown'])) {
         </div>
     </div>
 
+    <!-- Release 1 -->
     <div class="bookshelf">
         <div class="bstitle">NEW RELEASE</div>
         <div class="bookcontainer">
@@ -120,6 +123,8 @@ if (!isset($_SESSION['modalShown'])) {
             <div class="bookcenter"><button class="button1"><a href="borrow_book.php">Borrow</a></button></div>
         </div>
     </div>
+
+    <!-- Most Viewed 1 -->
     <div class="bookshelf">
         <div class="bstitle">MOST VIEWED</div>
         <div class="bookcontainer">
@@ -159,6 +164,7 @@ if (!isset($_SESSION['modalShown'])) {
         </div>
     </div>
 
+    <!-- Release 2 (Beta) -->
     <div class="bookshelf">
         <div class="bstitle">NEW RELEASE!</div>
         <div class="bookcontainer">buku 1</div>
@@ -167,17 +173,23 @@ if (!isset($_SESSION['modalShown'])) {
         <div class="bookcontainer">buku 4</div>
         <div class="bookcontainer">buku 5</div>
     </div>
+
+    <!-- Notifikasi -->
     <a href="notifikasi_user.php">
         <img src="img/bell.png" class="notification-icon" alt="Notification Bell">
     </a>
 
+    <!-- Footer -->
     <footer class="footer bg-dark text-light" style="margin-top: 20px;">
         <div class="container">
             <div class="row">
+            <!-- Footer-About -->
             <div class="col-lg-4" style="margin-top: 20px;">
                 <h5>About Us</h5>
                 <p>Our library is dedicated to providing a seamless book borrowing experience for our users. With our library management system, you can easily explore our extensive collection of books, place holds, and check out your favorite titles. Our user-friendly interface and efficient processes ensure a hassle-free borrowing process, allowing you to enjoy the pleasure of reading.</p>
             </div>
+
+            <!-- Footer-Contact Us -->
             <div class="col-lg-4" style="margin-top: 20px;">
                 <h5>Contact Us</h5>
                 <ul class="list-unstyled">
@@ -186,6 +198,8 @@ if (!isset($_SESSION['modalShown'])) {
                 <li>Address: Kp.Gendingan No.44 Surakarta</li>
                 </ul>
             </div>
+
+            <!-- Footer-Follow Us -->
             <div class="col-lg-4" style="margin-top: 20px;">
                 <h5>Follow Us</h5>
                 <ul class="list-inline">
@@ -195,6 +209,8 @@ if (!isset($_SESSION['modalShown'])) {
                 </ul>
             </div>
             </div>
+
+            <!-- Footer-Copyright -->
             <div class="row">
             <div class="col-lg-12 text-center">
                 <p>&copy; 2023 Librarow. All Rights Reserved.</p>

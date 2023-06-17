@@ -9,6 +9,7 @@ if(!isset($_SESSION["login"])){
  $book = query("SELECT * FROM buku WHERE kategori ='$category'");
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
