@@ -61,8 +61,8 @@ if(isset($_POST["register"])){
         .logincontainer {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            align-items: left;
+            justify-content: left;
             height: 85vh;
         }
 
@@ -79,9 +79,6 @@ if(isset($_POST["register"])){
             width: 100%;
         }
 
-        .forgot-password {
-            margin-left: 0px;
-        }
     </style>
 </head>
 
@@ -93,26 +90,25 @@ if(isset($_POST["register"])){
             </div>
         </div>
         <div class="title">REGISTER</div>
-        <?php if(isset($errorMessage)): ?>
-                <div class="alert alert-danger" role="alert">
-                    <?php echo $errorMessage; ?>
-                </div>
-        <?php endif; ?>
-
-        <!-- sementara -->
         <form action="" method="post">
-            <div class="textlog">Name <br>
-        <input type="text" name="name" id="name" class="form-control" required>
-            <div class="textlog">Username <br>
-        <input type="text" name="username" id="username" class="form-control" required>
-            <div class="textlog">Password <br>
-        <input type="password" name="password" id="password" class="form-control" required>
-        <button type="submit" name="register">Register</button>
+            <div class="textlog">
+                <label for="nama">Nama</label>
+                <input type="text" name="name" id="nama" class="form-control" required>
+            </div>
+            <div class="textlog">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" class="form-control" required>
+            </div>
+            <div class="textlog">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" class="form-control" required>
+            </div>
+            <button type="submit" name="register" class="btn btn-primary">Register</button>
         </form>
-        </div>
         <a href="login.php">Login</a>
-      
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
