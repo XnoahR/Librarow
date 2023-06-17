@@ -18,6 +18,29 @@ if(!isset($_SESSION["login"])){
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/user_page.css">
     <style>
+        /* Navbar */
+        .nav-link {
+            position: relative;
+            transition: all 0.3s;
+            }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #fff;
+            transform: scaleX(0);
+            transition: transform 0.3s;
+            }
+
+        .nav-link:hover::after {
+            transform: scaleX(1);
+            }
+
+        /* Button */
         .button1:hover {
             animation: pop-up 0.3s ease;
             background-color: lightgreen;
@@ -41,25 +64,23 @@ if(!isset($_SESSION["login"])){
 
     <!--Navbar-->
     <nav class="navbar sticky-top navbar-expand-sm navbar-dark" style="color: #D0EFFF;">
-        <div class="container-fluid ">
-            <a class="navbar-brand " href="#"><img src="img/logo.png" alt="logo" width="30"> LIBRAROW</a>
-            <div class="nav navbar-custom" id="navbarSupportedContent" style="color: #D0EFFF !important;">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="user_page.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="book_categories.php">Categories</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="user_profile.php">Profile</a>
-                    </li>
-                </ul>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="img/logo.png" alt="logo" width="30"> LIBRAROW</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                <a class="nav-link" href="user_page.php" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Home" data-bs-animation="true">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="book_categories.php" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Categories" data-bs-animation="true">Categories</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="user_profile.php" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Profile" data-bs-animation="true">Profile</a>
+                </li>
+            </ul>
             </div>
         </div>
     </nav>
-
-
 
     <div class="bookshelf">
         <div class="bstitle">NEW RELEASE</div>
@@ -149,6 +170,9 @@ if(!isset($_SESSION["login"])){
     <a href="notifikasi_user.php">
         <img src="img/bell.png" class="notification-icon" alt="Notification Bell">
     </a>
+
+<!-- Script Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
