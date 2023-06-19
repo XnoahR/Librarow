@@ -130,7 +130,7 @@ function register($data){
         return false;
     }
     //Input data 
-    mysqli_query($conn,"INSERT INTO user VALUES ('','$username','$password','$name','','','','aktif')");
+    mysqli_query($conn,"INSERT INTO user VALUES ('','$username','$password','$name','','','','aktif','')");
     return(mysqli_affected_rows($conn));
 }
 
