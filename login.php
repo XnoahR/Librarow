@@ -118,11 +118,11 @@ if(isset($_POST["login"])){
         <form action="" method="post">
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" name="username" id="username" class="form-control" required>
+                <input type="text" name="username" id="username" class="form-control form-control-animate" placeholder="Input your username" required>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password" class="form-control" required>
+                <input type="password" name="password" id="password" class="form-control form-control-animate" placeholder="Input your password" required>
             </div>
             <div class="form-group form-check">
                 <input type="checkbox" checked="checked" name="remember" id="remember" class="form-check-input">

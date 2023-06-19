@@ -93,15 +93,15 @@ if(isset($_POST["register"])){
         <form action="" method="post">
             <div class="textlog">
                 <label for="nama">Nama</label>
-                <input type="text" name="name" id="nama" class="form-control" required>
+                <input type="text" name="name" id="nama" class="form-control form-control-animate" placeholder="Input your name" required>
             </div>
             <div class="textlog">
                 <label for="username">Username</label>
-                <input type="text" name="username" id="username" class="form-control" required>
+                <input type="text" name="username" id="username" class="form-control form-control-animate" placeholder="Input your username" required>
             </div>
             <div class="textlog">
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password" class="form-control" required>
+                <input type="password" name="password" id="password" class="form-control form-control-animate" placeholder="Input your password" required>
             </div>
             <button type="submit" name="register" class="btn btn-primary">Register</button>
         </form>
