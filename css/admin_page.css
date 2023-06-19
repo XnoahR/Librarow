@@ -218,3 +218,33 @@ td {
   border-radius: 25px;
 
 }
+
+.nobar {
+  width: 80%;
+  height: 15vh;
+  background-color: white;
+  margin: auto;
+  margin-top: 25px;
+  
+}
+
+.nobar .notext{
+  width: 80%;
+  height: 100%;
+  padding: 15px;
+  padding-top: 3%;
+  text-align: justify;
+  vertical-align: middle;
+  border: 1px solid blue;
+  float: left;
+}
+
+.nobar .nobtn{
+  width: 20%;
+  height: 100%;
+  border: 1px solid red;
+  padding-top: 3%;
+  padding-left: 15px;
+  text-align: center;
+  float: right;
+}

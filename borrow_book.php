@@ -95,7 +95,7 @@ if(!isset($_SESSION["login"])){
         <input type="hidden" name="id_buku" id="id_buku" value="<?=$id?>">
         <input type="hidden" name="id_pustakawan" id="id_pustakawan" value="1">
         <button class="buttonbb" type="button" data-toggle="modal" data-target="#myModal">Borrow</button>
-    </form>
+    
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -112,12 +112,12 @@ if(!isset($_SESSION["login"])){
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary btn-animate" data-dismiss="modal">Cancel</button>
-        <button type="submit" class="btn btn-primary btn-animate" name="submit" onclick="return confirm('Pinjam buku <?=$booktitle?>?');">Borrow</button>
+        <button type="submit" class="btn btn-primary btn-animate" name="submit">Borrow</button>
       </div>
     </div>
   </div>
 </div>
-
+</form>
 
 <br><br>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

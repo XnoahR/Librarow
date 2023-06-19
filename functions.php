@@ -162,4 +162,27 @@ function SearchMhs($keyword){
     $query = "SELECT * FROM user WHERE nama LIKE '%$keyword%' OR nim LIKE '%$keyword%'";
     return query($query);
 }
+
+function AcceptBook($id){
+    global $conn;
+    $currentDate = date('Y-m-d');
+    $query = "UPDATE peminjaman SET status_peminjaman = 'dipinjam',
+     tgl_pinjam = '$currentDate'
+    WHERE id_pinjam = '$id'";
+    mysqli_query($conn,$query);
+
+    return mysqli_affected_rows($conn);
+
+}
+
+function RejectBook($id){
+    global $conn;
+  
+    $query = "UPDATE peminjaman SET status_peminjaman = 'ditolak'
+    WHERE id_pinjam = '$id'";
+    mysqli_query($conn,$query);
+
+    return mysqli_affected_rows($conn);
+
+}
 ?>

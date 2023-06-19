@@ -1,5 +1,46 @@
+<?php 
+include 'functions.php';
+session_start();
+if(!isset($_SESSION["admin"])){
+    header("Location:login.php");
+    exit;
+} 
+//Ambil semua Data
+$pustakawan = query("SELECT * FROM pustakawan");
+$book = query("SELECT * FROM buku");
+$user = query("SELECT * FROM user");
+$peminjaman = query("SELECT * FROM peminjaman");
+
+//Bagian Peminjaman
+$notifPeminjaman = query("SELECT * FROM peminjaman WHERE status_peminjaman = 'pending'");
+//Ambil data nama user
+$idUserPeminjaman = query("SELECT id_user FROM peminjaman WHERE status_peminjaman = 'pending'");
+$arrNama = [];
+$arrIdUser = [];
+foreach($idUserPeminjaman as $idUserList){
+    $idUser = $idUserList['id_user'];
+    $namaUser = query("SELECT nama FROM user WHERE id ='$idUser'")[0];
+    $saveIdUser = query("SELECT * FROM user WHERE id ='$idUser'")[0];
+    $arrIdUser[] = $saveIdUser['id'];
+    $arrNama[] = $namaUser['nama'];
+}
+//Ambil data buku
+$arrBuku = [];
+foreach($notifPeminjaman as $idBukuList){
+    $idBuku = $idBukuList['id_buku'];
+    $namaBuku = query("SELECT nama FROM buku WHERE id = '$idBuku'")[0];
+    $arrBuku[] = $namaBuku['nama'];
+}
+
+//Bagian Pengembalian
+$notifPengembalian = query("SELECT * FROM peminjaman WHERE status_peminjaman = 'mengembalikan'");
+//Ambil data nama user
+$idUserPengembalian = query("SELECT id_user FROM peminjaman WHERE status_peminjaman = 'mengembalikan'");
+
+
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">    
 
 <head>
     <meta charset="UTF-8">
@@ -49,8 +90,36 @@
         </div>
     </nav>
 
+    
+
+    <ul style="list-style: none;">
+    <?php $i = 0;?>
+    <?php foreach($notifPeminjaman as $notif) :?>
+<li><div class="nobar">
+    <div class="notext"><a href="informasi_mhs.php?id=<?=$arrIdUser[$i];?>"><?=$arrNama[$i];?></a> ingin meminjam buku <?= $arrBuku[$i]; ?></div>
+    <div class="nobtn"><a href="accept_book.php?id=<?=$notif['id_pinjam']?>"><button class="btn btn-success me-2">Accept</button></a>
+    <a href="reject_book.php?id=<?=$notif['id_pinjam']?>"><button class="btn btn-danger">Reject</button></a></div>
+</div>
+<?php $i++;?></li>
+<?php endforeach;?>
+
+
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- Notification Section -->
-    <section class="notification-section">
+    <!-- <section class="notification-section">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">
@@ -91,7 +160,7 @@
             showMoreButton.classList.remove('hidden');
             showLessButton.classList.add('hidden');
         });
-    </script>
+    </script> -->
 </body>
 
 </html>
