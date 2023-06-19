@@ -36,7 +36,22 @@ foreach($notifPeminjaman as $idBukuList){
 $notifPengembalian = query("SELECT * FROM peminjaman WHERE status_peminjaman = 'mengembalikan'");
 //Ambil data nama user
 $idUserPengembalian = query("SELECT id_user FROM peminjaman WHERE status_peminjaman = 'mengembalikan'");
-
+$arrNamaPengembalian = [];
+$arrIdUserPengembalian = [];
+foreach($idUserPengembalian as $idUserPengembalianList){
+    $idUserPb = $idUserPengembalianList['id_user'];
+    $namaUserPb =  query("SELECT nama FROM user WHERE id = '$idUserPb'")[0];
+    $saveIdUserPb = query("SELECT * FROM user WHERE id ='$idUser'")[0];
+    $arrIdUserPengembalian[] = $saveIdUserPb['id'];
+    $arrNamaPengembalian[] =  $nameUserPb['nama'];
+}
+//Ambil data buku
+$arrBukuPengembalian = [];
+foreach($notifPengembalian as $idBukuListPengembalian){
+    $idBukuPb = $idBukuListPengembalian['id_buku'];
+    $namaBukuPb = query("SELECT nama FROM buku WHERE id = '$idBukuPb'")[0];
+    $arrBukuPengembalian[] = $namaBukuPb['nama'];
+}
 
 ?>
 <!DOCTYPE html>
@@ -102,6 +117,7 @@ $idUserPengembalian = query("SELECT id_user FROM peminjaman WHERE status_peminja
 </div>
 <?php $i++;?></li>
 <?php endforeach;?>
+   
 
 
 </ul>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 17, 2023 at 03:52 PM
+-- Generation Time: Jun 19, 2023 at 07:33 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -43,7 +43,7 @@ CREATE TABLE `buku` (
 INSERT INTO `buku` (`id`, `nama`, `pengarang`, `available`, `sampul`, `kategori`) VALUES
 (6, 'December', 'Neck Deep', 5, '648908c086017.jpg', 'Biograph'),
 (7, 'Wake Me Up When September Ends', 'Green Day', 10, '6489086b46d89.png', 'Biograph'),
-(8, 'Bored to Death', 'blink', 7, '6489083003283.jpg', 'Horror'),
+(8, 'Bored to Death', 'blink', 6, '6489083003283.jpg', 'Horror'),
 (9, 'Together for the Kids', 'blink', 5, '6489083629f7b.jpg', 'Drama'),
 (10, 'Yellow', 'Gawr Gura', 4, '64890530e550a.jpg', 'Sociology'),
 (11, 'Lost Kitten', 'Ryou', 1, '6489091b38e0b.png', 'Romance'),
@@ -64,7 +64,7 @@ CREATE TABLE `peminjaman` (
   `id_buku` int(11) NOT NULL,
   `tgl_pinjam` date DEFAULT NULL,
   `tgl_kembalian` date DEFAULT NULL,
-  `status_peminjaman` enum('pending','disetujui','ditolak','dipinjam','dikembalikan') NOT NULL
+  `status_peminjaman` enum('pending','disetujui','ditolak','dipinjam','dikembalikan','mengembalikan') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -72,8 +72,10 @@ CREATE TABLE `peminjaman` (
 --
 
 INSERT INTO `peminjaman` (`id_pinjam`, `id_user`, `id_pustakawan`, `id_buku`, `tgl_pinjam`, `tgl_kembalian`, `status_peminjaman`) VALUES
-(11, 3, 1, 8, '0000-00-00', '0000-00-00', 'pending'),
-(12, 3, 1, 9, '0000-00-00', '0000-00-00', 'dipinjam');
+(11, 3, 1, 8, '2023-06-19', '0000-00-00', 'dipinjam'),
+(12, 3, 1, 9, '0000-00-00', '0000-00-00', 'pending'),
+(13, 5, 1, 11, '0000-00-00', '0000-00-00', 'ditolak'),
+(14, 5, 1, 8, '2023-06-19', '0000-00-00', 'dipinjam');
 
 -- --------------------------------------------------------
 
@@ -122,7 +124,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `username`, `password`, `nama`, `email`, `nohp`, `nim`, `status`, `foto`) VALUES
 (3, 'ray', 'chi', 'Rio', 'rio.ae23@gmail.com', '', '', 'aktif', '64890530e550a.jpg'),
-(4, 'zzz', 'kkk', 'xyz', '', '', '', 'aktif', NULL);
+(4, 'zzz', 'kkk', 'xyz', '', '', '', 'aktif', NULL),
+(5, 'luthor', 'anjay', 'lex', '', '', '', 'aktif', '');
 
 --
 -- Indexes for dumped tables
@@ -170,7 +173,7 @@ ALTER TABLE `buku`
 -- AUTO_INCREMENT for table `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  MODIFY `id_pinjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_pinjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `pustakawan`
@@ -182,7 +185,7 @@ ALTER TABLE `pustakawan`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables

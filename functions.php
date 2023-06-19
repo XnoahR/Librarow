@@ -166,6 +166,9 @@ function SearchMhs($keyword){
 function AcceptBook($id){
     global $conn;
     $currentDate = date('Y-m-d');
+    $peminjaman = query("SELECT * FROM peminjaman WHERE id_pinjam = '$id'")[0];
+    $idBuku = $peminjaman['id_buku'];
+    $idBook = mysqli_query($conn,"UPDATE buku SET available = available-1 WHERE id = '$idBuku'");
     $query = "UPDATE peminjaman SET status_peminjaman = 'dipinjam',
      tgl_pinjam = '$currentDate'
     WHERE id_pinjam = '$id'";

@@ -1,0 +1,9 @@
+ <?php $j = 0;?>
+    <?php foreach($notifPengembalian as $notifPb) :?>
+<li><div class="nobar">
+    <div class="notext"><a href="informasi_mhs.php?id=<?=$arrIdUser[$i];?>"><?=$arrNama[$i];?></a> ingin meminjam buku <?= $arrBuku[$i]; ?></div>
+    <div class="nobtn"><a href="accept_book.php?id=<?=$notif['id_pinjam']?>"><button class="btn btn-success me-2">Accept</button></a>
+    <a href="reject_book.php?id=<?=$notif['id_pinjam']?>"><button class="btn btn-danger">Reject</button></a></div>
+</div>
+<?php $i++;?></li>
+<?php endforeach;?>
