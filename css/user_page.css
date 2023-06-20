@@ -708,3 +708,38 @@
   width: 100%;
 }
 
+  /* Riwayat peminjaman*/
+  /* /////////////////////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////// */
+  
+    .riwayat-peminjaman-section {
+        padding: 50px 0;
+        background-color: #f8f8f8;
+        text-align: center;
+    }
+
+    .riwayat-peminjaman-section h2 {
+        margin-bottom: 30px;
+        color: #333;
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    .table th, .table td {
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+
+    .table thead {
+        background-color: #f0f0f0;
+    }
+
+    .table tbody tr:nth-child(even) {
+        background-color: #f8f8f8;
+    }
