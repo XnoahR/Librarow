@@ -1,10 +1,82 @@
-<?php 
+<?php
 include 'functions.php';
 session_start();
-if(!isset($_SESSION["login"])){
+if (!isset($_SESSION["login"])) {
     header("Location:login.php");
     exit;
-} 
+}
+$username = $_COOKIE['username'];
+
+//Ambil semua Data
+$pustakawan = query("SELECT * FROM pustakawan");
+$book = query("SELECT * FROM buku");
+$user = query("SELECT * FROM user WHERE username = '$username'")[0];
+$peminjaman = query("SELECT * FROM peminjaman");
+
+//Bagian Peminjaman Pending
+$notifPeminjamanPending = query("SELECT * FROM peminjaman WHERE status_peminjaman = 'pending' AND id_user = '{$user['id']}'");
+//Ambil data nama user
+
+$idUserPeminjaman = query("SELECT id_user FROM peminjaman WHERE status_peminjaman = 'pending'");
+// $arrNama = [];
+// $arrIdUser = [];
+// foreach($idUserPeminjaman as $idUserList){
+//     $idUser = $idUserList['id_user'];
+//     $namaUser = query("SELECT nama FROM user WHERE id ='$idUser'")[0];
+//     $saveIdUser = query("SELECT * FROM user WHERE id ='$idUser'")[0];
+//     $arrIdUser[] = $saveIdUser['id'];
+//     $arrNama[] = $namaUser['nama'];
+// }
+
+//Ambil data buku
+$arrBukuPending = [];
+foreach ($notifPeminjamanPending as $idBukuList) {
+    $idBuku = $idBukuList['id_buku'];
+    $namaBuku = query("SELECT nama FROM buku WHERE id = '$idBuku'")[0];
+    $arrBukuPending[] = $namaBuku['nama'];
+}
+
+//Bagian Peminjaman Diterima
+$notifPeminjamanDiterima = query("SELECT * FROM peminjaman WHERE status_peminjaman = 'dipinjam' AND id_user = '{$user['id']}'");
+$arrBukuDiterima = [];
+foreach ($notifPeminjamanDiterima as $idBukuList) {
+    $idBukuDiterima = $idBukuList['id_buku'];
+    $namaBukuDiterima = query("SELECT nama FROM buku WHERE id = '$idBukuDiterima'")[0];
+    $arrBukuDiterima[] = $namaBukuDiterima['nama'];
+}
+//Bagian peminjaman Ditolak
+$notifPeminjamanDitolak = query("SELECT * FROM peminjaman WHERE status_peminjaman = 'ditolak' AND id_user = '{$user['id']}'");
+$arrBukuDitolak = [];
+foreach ($notifPeminjamanDitolak as $idBukuList) {
+    $idBukuDitolak = $idBukuList['id_buku'];
+    $namaBukuDitolak = query("SELECT nama FROM buku WHERE id = '$idBukuDitolak'")[0];
+    $arrBukuDitolak[] = $namaBukuDitolak['nama'];
+}
+//Bagian Permintaan Pengembalian
+$notifPengembalianMengembalikan = query("SELECT * FROM peminjaman WHERE status_peminjaman = 'mengembalikan' AND id_user = '{$user['id']}'");
+$arrBukuMengembalikan = [];
+foreach ($notifPengembalianMengembalikan as $idBukuList) {
+    $idBukuMengembalikan = $idBukuList['id_buku'];
+    $namaBukuMengembalikan = query("SELECT nama FROM buku WHERE id = '$idBukuMengembalikan'")[0];
+    $arrBukuMengembalikan[] = $namaBukuMengembalikan['nama'];
+}
+//Bagian Pengembalian Diterima
+$notifPengembalianDiterima = query("SELECT * FROM peminjaman WHERE status_peminjaman = 'dikembalikan' AND id_user = '{$user['id']}'");
+$arrBukuDikembalikan = [];
+foreach ($notifPengembalianDiterima as $idBukuList) {
+    $idBukuDikembalikan = $idBukuList['id_buku'];
+    $namaBukuDikembalikan = query("SELECT nama FROM buku WHERE id = '$idBukuDikembalikan'")[0];
+    $arrBukuDikembalikan[] = $namaBukuDikembalikan['nama'];
+}
+//Bagian Pengembalian Ditolak
+$notifPengembalianDireject = query("SELECT * FROM peminjaman WHERE status_peminjaman = 'rejected' AND id_user = '{$user['id']}'");
+$arrBukuDireject = [];
+foreach ($notifPengembalianDireject as $idBukuList) {
+    $idBukuDireject = $idBukuList['id_buku'];
+    $namaBukuDireject = query("SELECT nama FROM buku WHERE id = '$idBukuDireject'")[0];
+    $arrBukuDireject[] = $namaBukuDireject['nama'];
+}
+// var_dump($arrBukuDiterima);die;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +88,7 @@ if(!isset($_SESSION["login"])){
     <title>Librarow - User Notification</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/user_page.css">
-    <style>
+    <!-- <style>
         .notification-card {
             background-color: white;
             padding: 20px;
@@ -35,7 +107,7 @@ if(!isset($_SESSION["login"])){
         .hidden {
             display: none;
         }
-    </style>
+    </style> -->
 </head>
 
 <body style="background-color: #D0D0D0;">
@@ -61,39 +133,70 @@ if(!isset($_SESSION["login"])){
     </nav>
 
     <!-- Notification Section -->
-    <section class="notification-section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="notification-card">
-                        <h3 class="card-title">Update Aplikasi</h3>
-                        <p class="card-text">Kami telah merilis pembaruan terbaru untuk aplikasi Librarow. Silakan unduh
-                            versi terbaru untuk mendapatkan fitur dan perbaikan terkini.</p>
-                    </div>
-                    <div class="notification-card hidden">
-                        <h3 class="card-title">Permintaan Pengembalian</h3>
-                        <p class="card-text">Pengembalian telah divalidasi oleh admin, selamat meminjam buku kembali dan semangat mencari ilmu</p>
-                    </div>
-                    <div class="notification-card hidden">
-                        <h3 class="card-title">Pengembalian</h3>
-                        <p class="card-text">Pengembalian buku berjudul "Test1" akan divalidasi oleh admin, kembalikan buku terlebih dahulu agar segera divalidasi</p>
-                    </div>
-                    <div class="notification-card hidden">
-                        <h3 class="card-title">Permintaan Peminjaman</h3>
-                        <p class="card-text">Validasi berhasil, silahkan pinjam buku yang sesuai dengan kesepakatan dengan mendatangi perpustakaan</p>
-                    </div>
-                    <div class="notification-card hidden">
-                        <h3 class="card-title">Peminjaman</h3>
-                        <p class="card-text">Anda telah meminjam buku yang berjudul "Test1", mohon tunggu proses selanjutnya</p>
-                    </div>
-                    <div class="show-more-button">Show More</div>
-                    <div class="show-less-button hidden">Show Less</div>
+    <?php $i = 0; ?>
+    <?php $j = 0; ?>
+    <?php $k = 0; ?>
+    <?php $l = 0; ?>
+    <?php $m = 0; ?>
+    <?php $n = 0; ?>
+    <ul style="list-style: none;">
+        <?php foreach ($notifPeminjamanPending as $notif) : ?>
+            <li>
+                <div class="nobarpending">
+                    <div class="notext">Permintaan peminjaman buku <?= $arrBukuPending[$i]; ?> sedang diproses oleh admin.</div>
                 </div>
-            </div>
-        </div>
-    </section>
+                <?php $i++; ?>
+            </li>
+        <?php endforeach; ?>
 
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+        <?php foreach ($notifPeminjamanDiterima as $notif) : ?>
+            <li>
+                <div class="nobarditerima">
+                    <div class="notext">Permintaan peminjaman buku <?= $arrBukuDiterima[$j]; ?> telah diterima oleh admin.</div>
+                </div>
+                <?php $j++; ?>
+            </li>
+        <?php endforeach; ?>
+
+        <?php foreach ($notifPeminjamanDitolak as $notif) : ?>
+            <li>
+                <div class="nobarditolak">
+                    <div class="notext">Permintaan peminjaman buku <?= $arrBukuDitolak[$k]; ?> ditolak oleh admin.</div>
+                </div>
+                <?php $k++; ?>
+            </li>
+        <?php endforeach; ?>
+
+        <?php foreach ($notifPengembalianMengembalikan as $notif) : ?>
+            <li>
+                <div class="nobarpending">
+                    <div class="notext">Permintaan pengembalian buku <?= $arrBukuMengembalikan[$l]; ?> sedang diproses oleh admin.</div>
+                </div>
+                <?php $l++; ?>
+            </li>
+        <?php endforeach; ?>
+
+        <?php foreach ($notifPengembalianDiterima as $notif) : ?>
+            <li>
+                <div class="nobarditerima">
+                    <div class="notext">Permintaan pengembalian buku <?= $arrBukuDikembalikan[$m]; ?> telah diterima oleh admin.</div>
+                </div>
+                <?php $m++; ?>
+            </li>
+        <?php endforeach; ?>
+
+        <?php foreach ($notifPengembalianDireject as $notif) : ?>
+            <li>
+                <div class="nobarditolak">
+                    <div class="notext">Permintaan pengembalian buku <?= $arrBukuDireject[$n]; ?> ditolak oleh admin.</div>
+                </div>
+                <?php $n++; ?>
+            </li>
+        <?php endforeach; ?>
+
+    </ul>
+
+    <!-- <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <script>
         const showMoreButton = document.querySelector('.show-more-button');
         const showLessButton = document.querySelector('.show-less-button');
@@ -114,7 +217,7 @@ if(!isset($_SESSION["login"])){
             showMoreButton.classList.remove('hidden');
             showLessButton.classList.add('hidden');
         });
-    </script>
+    </script> -->
 </body>
 
 </html>

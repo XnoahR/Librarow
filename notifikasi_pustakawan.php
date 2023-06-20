@@ -98,7 +98,7 @@ foreach($notifPengembalian as $idBukuListPengembalian){
                         <a class="nav-link" href="admin_page.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="profil_pustakawan.php">Profile</a>
+                        <a class="nav-link" href="profile_pustakawan.php">Profile</a>
                     </li>
                 </ul>
             </div>
@@ -118,8 +118,6 @@ foreach($notifPengembalian as $idBukuListPengembalian){
 <?php $i++;?></li>
 <?php endforeach;?>
    
-
-
 </ul>
 
 

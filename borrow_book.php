@@ -1,6 +1,10 @@
 <?php 
 include 'functions.php';
 session_start();
+if(!isset($_SESSION["login"])){
+    header("Location:login.php");
+    exit;
+} 
 $id = $_GET['id'];
 $book = query("SELECT * FROM buku WHERE id ='$id'")[0];
 $booktitle = $book['nama'];
@@ -9,20 +13,30 @@ $user = query("SELECT * FROM user WHERE username = '$username'")[0];
 $id_user= $user['id'];
 
 if(isset($_POST['submit'])){
+    if($book['available'] <1){
+        echo "<script>
+        alert('Buku Habis!');
+        document.location.href = 'borrow_book.php?id={$book['id']}';
+        </script>";
+        exit;
+    }
+    else{
     if(borrow($_POST) > 0){
     echo "<script>
-    alert('Buku berhasil dipinjam');
+    alert('Permintaan Peminjaman Berhasil!');
+    document.location.href = 'borrow_book.php?id={$book['id']}';
     </script>";
     }
     else{
-        echo "Data ERROR!";
+        echo "<script>
+        alert('Permintaan Buku ditolak');
+        document.location.href = 'borrow_book.php?id={$book['id']}';
+        </script>";
     }
 }
+}
 
-if(!isset($_SESSION["login"])){
-    header("Location:login.php");
-    exit;
-} 
+
 ?>
 
 <!DOCTYPE html>

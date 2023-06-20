@@ -40,6 +40,11 @@ if (!isset($_SESSION['modalShown'])) {
     </script>
     ';
 }
+
+$buku = query("SELECT * FROM buku");
+$bukuTerbaru = query("SELECT * FROM buku ORDER BY id DESC LIMIT 5");
+$bukuTerlaku = query("SELECT * FROM buku ORDER BY available ASC LIMIT 5");
+$bukuAcak = query("SELECT * FROM buku ORDER BY RAND() LIMIT 5");
 ?>
 
 <!DOCTYPE html>
@@ -88,91 +93,43 @@ if (!isset($_SESSION['modalShown'])) {
     <!-- Release 1 -->
     <div class="bookshelf">
         <div class="bstitle">NEW RELEASE</div>
+        <?php foreach($bukuTerbaru as $bukuList) :?>
         <div class="bookcontainer">
             <div class="bookcenter">
-                <img src="img/stevejob.png" width="145" height="200">
+                <img src="img/<?=$bukuList['sampul'];?>" width="145" height="200">
             </div>
-            <div class="booktitle">Steve Jobs</div>
-            <div class="bookcenter"><button class="button1"><a href="borrow_book.php">Borrow</a></button></div>
+            <div class="booktitle"><?=$bukuList['nama'];?></div>
+            <div class="bookcenter"><a href="borrow_book.php?id=<?=$bukuList['id'];?>"><button class="button1">Borrow</button></a></div>
         </div>
-        <div class="bookcontainer">
-            <div class="bookcenter">
-                <img src="img/stevejob.png" width="145" height="200">
-            </div>
-            <div class="booktitle">Steve Jobs</div>
-            <div class="bookcenter"><button class="button1"><a href="borrow_book.php">Borrow</a></button></div>
-        </div>
-        <div class="bookcontainer">
-            <div class="bookcenter">
-                <img src="img/stevejob.png" width="145" height="200">
-            </div>
-            <div class="booktitle">Steve Jobs</div>
-            <div class="bookcenter"><button class="button1"><a href="borrow_book.php">Borrow</a></button></div>
-        </div>
-        <div class="bookcontainer">
-            <div class="bookcenter">
-                <img src="img/stevejob.png" width="145" height="200">
-            </div>
-            <div class="booktitle">Steve Jobs</div>
-            <div class="bookcenter"><button class="button1"><a href="borrow_book.php">Borrow</a></button></div>
-        </div>
-        <div class="bookcontainer">
-            <div class="bookcenter">
-                <img src="img/stevejob.png" width="145" height="200">
-            </div>
-            <div class="booktitle">Steve Jobs</div>
-            <div class="bookcenter"><button class="button1"><a href="borrow_book.php">Borrow</a></button></div>
-        </div>
+        <?php endforeach;?>
     </div>
 
     <!-- Most Viewed 1 -->
     <div class="bookshelf">
-        <div class="bstitle">MOST VIEWED</div>
+    <div class="bstitle">MOST VIEWED</div>
+        <?php foreach($bukuTerlaku as $bukuList) :?>
         <div class="bookcontainer">
             <div class="bookcenter">
-                <img src="img/stevejob.png" width="145" height="200">
+                <img src="img/<?=$bukuList['sampul'];?>" width="145" height="200">
             </div>
-            <div class="booktitle">Steve Jobs</div>
-            <div class="bookcenter"><button class="button1"><a href="borrow_book.php">Borrow</a></button></div>
+            <div class="booktitle"><?=$bukuList['nama'];?></div>
+            <div class="bookcenter"><a href="borrow_book.php?id=<?=$bukuList['id'];?>"><button class="button1">Borrow</button></a></div>
         </div>
-        <div class="bookcontainer">
-            <div class="bookcenter">
-                <img src="img/stevejob.png" width="145" height="200">
-            </div>
-            <div class="booktitle">Steve Jobs</div>
-            <div class="bookcenter"><button class="button1"><a href="borrow_book.php">Borrow</a></button></div>
-        </div>
-        <div class="bookcontainer">
-            <div class="bookcenter">
-                <img src="img/stevejob.png" width="145" height="200">
-            </div>
-            <div class="booktitle">Steve Jobs</div>
-            <div class="bookcenter"><button class="button1"><a href="borrow_book.php">Borrow</a></button></div>
-        </div>
-        <div class="bookcontainer">
-            <div class="bookcenter">
-                <img src="img/stevejob.png" width="145" height="200">
-            </div>
-            <div class="booktitle">Steve Jobs</div>
-            <div class="bookcenter"><button class="button1"><a href="borrow_book.php">Borrow</a></button></div>
-        </div>
-        <div class="bookcontainer">
-            <div class="bookcenter">
-                <img src="img/stevejob.png" width="145" height="200">
-            </div>
-            <div class="booktitle">Steve Jobs</div>
-            <div class="bookcenter"><button class="button1"><a href="borrow_book.php">Borrow</a></button></div>
-        </div>
+        <?php endforeach;?>
     </div>
 
     <!-- Release 2 (Beta) -->
     <div class="bookshelf">
-        <div class="bstitle">NEW RELEASE!</div>
-        <div class="bookcontainer">buku 1</div>
-        <div class="bookcontainer">buku 2</div>
-        <div class="bookcontainer">buku 3</div>
-        <div class="bookcontainer">buku 4</div>
-        <div class="bookcontainer">buku 5</div>
+    <div class="bstitle">RANDOM CHOICE</div>
+        <?php foreach($bukuAcak as $bukuList) :?>
+        <div class="bookcontainer">
+            <div class="bookcenter">
+                <img src="img/<?=$bukuList['sampul'];?>" width="145" height="200">
+            </div>
+            <div class="booktitle"><?=$bukuList['nama'];?></div>
+            <div class="bookcenter"><a href="borrow_book.php?id=<?=$bukuList['id'];?>"><button class="button1">Borrow</button></a></div>
+        </div>
+        <?php endforeach;?>
     </div>
 
     <!-- Notifikasi -->
@@ -194,7 +151,7 @@ if (!isset($_SESSION['modalShown'])) {
             <div class="col-lg-4" style="margin-top: 20px;">
                 <h5>Contact Us</h5>
                 <ul class="list-unstyled">
-                <li>Email: librarowweb.gmail.com</li>
+                <li>Email: librarowweb@gmail.com</li>
                 <li>Phone: +6289655847696</li>
                 <li>Address: Kp.Gendingan No.44 Surakarta</li>
                 </ul>
