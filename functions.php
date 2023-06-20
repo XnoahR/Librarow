@@ -251,6 +251,21 @@ function AcceptBook($id){
 
 }
 
+function AcceptReturn($id){
+    global $conn;
+    $currentDate = date('Y-m-d');
+    $peminjaman = query("SELECT * FROM peminjaman WHERE id_pinjam = '$id'")[0];
+    $idBuku = $peminjaman['id_buku'];
+    $idBook = mysqli_query($conn,"UPDATE buku SET available = available+1 WHERE id = '$idBuku'");
+    $query = "UPDATE peminjaman SET status_peminjaman = 'dikembalikan',
+     tgl_kembalian = '$currentDate'
+    WHERE id_pinjam = '$id'";
+    mysqli_query($conn,$query);
+
+    return mysqli_affected_rows($conn);
+
+}
+
 function RejectBook($id){
     global $conn;
   
@@ -260,5 +275,35 @@ function RejectBook($id){
 
     return mysqli_affected_rows($conn);
 
+}
+function ReturnBook($id){
+    global $conn;
+  
+    $query = "UPDATE peminjaman SET status_peminjaman = 'mengembalikan'
+    WHERE id_pinjam = '$id'";
+    mysqli_query($conn,$query);
+
+    return mysqli_affected_rows($conn);
+
+}
+
+function RejectReturn($id){
+    global $conn;
+  
+    $query = "UPDATE peminjaman SET status_peminjaman = 'rejected'
+    WHERE id_pinjam = '$id'";
+    mysqli_query($conn,$query);
+
+    return mysqli_affected_rows($conn);
+
+}
+
+function ReturnBookUser($id){
+    global $conn;
+    $query = "UPDATE peminjaman SET status_peminjaman = 'mengembalikan'
+    WHERE id_pinjam = '$id'";
+    mysqli_query($conn,$query);
+
+    return mysqli_affected_rows($conn);
 }
 ?>

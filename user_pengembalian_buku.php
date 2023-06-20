@@ -1,3 +1,51 @@
+<?php 
+include 'functions.php';
+session_start();
+if(!isset($_SESSION["login"])){
+    header("Location:login.php");
+    exit;
+} 
+
+$username = $_COOKIE['username'];
+$user = query("SELECT * FROM user WHERE username = '$username'")[0];
+$riwayatBuku = query("SELECT * FROM peminjaman WHERE id_user='{$user['id']}' AND status_peminjaman ='dipinjam'");
+$dataBuku = query("SELECT id_buku FROM peminjaman WHERE id_user='{$user['id']}' AND status_peminjaman ='dipinjam'");
+
+$arrBook = [];
+$arrBookCover = [];
+$arrBookId = [];
+foreach($dataBuku as $daftarBuku){
+    $idBuku = $daftarBuku['id_buku'];
+    $buku = query("SELECT * FROM buku WHERE id = '$idBuku'")[0];
+    $arrBookId [] = $buku['id'];
+    $arrBook [] = $buku['nama'];
+    $arrBookCover [] = $buku['sampul'];
+}
+
+$dataLimitPerPage = 5;
+$dataTotal = count($riwayatBuku);
+$pageTotal = ceil($dataTotal / $dataLimitPerPage);
+$activePage = (isset($_GET['page'])) ? $_GET['page'] : 1;
+$dataStart = ($dataLimitPerPage * $activePage) - $dataLimitPerPage;
+$daftarRiwayat = query("SELECT * FROM peminjaman WHERE id_user='{$user['id']}' AND status_peminjaman ='dipinjam' LIMIT $dataStart, $dataLimitPerPage");
+
+
+if(isset($_POST['submit'])){
+    if(ReturnBookUser($_POST['id']) > 0){
+        echo "<script>
+        alert('Permintaan berhasil dikirim!');
+        document.location.href = 'user_pengembalian_buku.php';
+        </script>";
+    }
+    else{
+        echo "<script>
+        alert('ERROR!');
+        document.location.href = 'user_pengembalian_buku.php';
+        </script>";
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,78 +66,7 @@
             margin-bottom: 20px;
         }
 
-        form {
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        table {
-            width: 100%;
-            margin-bottom: 20px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .form-label-judul {
-            font-weight: bold;
-            padding: 10px;
-        }
-
-        .judul-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .judul-list li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #ccc;
-            padding: 10px;
-        }
-
-        .form-button-kembalikan {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .form-button-kembalikan:hover {
-            background-color: #0056b3;
-        }
-
-        .buttonbb {
-            display: block;
-            width: 100%;
-            max-width: 200px;
-            margin: 0 auto;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .buttonbb:hover {
-            background-color: #0056b3;
-        }
-
-        .pagination {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .page-item.active .page-link {
-            background-color: #007bff;
-            border-color: #007bff;
-        }
+      
     </style>
 </head>
 
@@ -118,66 +95,48 @@
     </nav>
 
     <!-- Pengembalian Buku -->
-    <h1>Form Pengembalian Buku</h1>
-    <form>
-        <table>
-            <tr>
-                <td><label for="judul" class="form-label-judul">Judul Buku:</label></td>
-            </tr>
-            <tr>
-                <td>
-                    <ul class="judul-list">
-                        <li>
-                            <p>Judul Buku 1</p>
-                            <button type="button" class="form-button-kembalikan">Kembalikan</button>
-                        </li>
-                        <li>
-                            <p>Judul Buku 2</p>
-                            <button type="button" class="form-button-kembalikan">Kembalikan</button>
-                        </li>
-                        <li>
-                            <p>Judul Buku 3</p>
-                            <button type="button" class="form-button-kembalikan">Kembalikan</button>
-                        </li>
-                        <li>
-                            <p>Judul Buku 4</p>
-                            <button type="button" class="form-button-kembalikan">Kembalikan</button>
-                        </li>
-                        <li>
-                            <p>Judul Buku 5</p>
-                            <button type="button" class="form-button-kembalikan">Kembalikan</button>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        </table>
-
-        <div class="pagination">
-            <ul class="pagination">
-                <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                </li>
-                <li class="page-item active" aria-current="page">
-                    <a class="page-link" href="#">1</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#">2</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#">3</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                </li>
-            </ul>
+    <h1>Buku yang sedang dipinjam</h1>
+    <div class="dbcon">
+        <?php $i = 0;?>
+        <?php foreach($daftarRiwayat as $bookList) :?>
+        <div class="dbbook">
+            <div class="dbimg"><img src="img/<?=$arrBookCover[$i]?>" alt=""></div>
+            <div class="dbtitle"><?= $arrBook[$i]; ?></div>
+            <div class="dbtitle"><form action="" method="post">
+                <input type="hidden" name="id" value="<?=$bookList['id_pinjam']?>">
+                <button class="btn-sm btn-warning"  name="submit" type="submit" onclick="return confirm('Ingin mengembalikan buku?')">Kembalikan</button>
+            </form></div>
         </div>
-
-    </form>
-
-    <div>
-        <button class="buttonbb">Save Changes</button>
+        <?php $i++?>
+        <?php endforeach;?>
+        
     </div>
 
+             <!-- Pagination -->
+        
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <?php if ($activePage > 1) : ?>
+                    <li class="page-item">
+                        <a class="page-link" href="?page=<?= $activePage - 1; ?>" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                <?php endif; ?>
+                <?php for ($i = 1; $i <= $pageTotal; $i++) : ?>
+                    <li class="page-item <?php if ($i == $activePage) echo 'active'; ?>">
+                        <a class="page-link" href="?page=<?= $i; ?>"><?= $i ?></a>
+                    </li>
+                <?php endfor; ?>
+                <?php if ($activePage < $pageTotal) : ?>
+                    <li class="page-item">
+                        <a class="page-link" href="?page=<?= $activePage + 1; ?>" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                <?php endif; ?>
+            </ul>
+        </nav>
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 

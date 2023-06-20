@@ -5,6 +5,29 @@ if(!isset($_SESSION["login"])){
     header("Location:login.php");
     exit;
 } 
+
+$username = $_COOKIE['username'];
+$user = query("SELECT * FROM user WHERE username = '$username'")[0];
+$riwayatBuku = query("SELECT * FROM peminjaman WHERE id_user='{$user['id']}' AND status_peminjaman ='dikembalikan'");
+$dataBuku = query("SELECT id_buku FROM peminjaman WHERE id_user='{$user['id']}' AND status_peminjaman ='dikembalikan'");
+
+$arrBook = [];
+foreach($dataBuku as $daftarBuku){
+    $idBuku = $daftarBuku['id_buku'];
+    $namaBuku = query("SELECT nama FROM buku WHERE id = '$idBuku'")[0];
+    $arrBook [] = $namaBuku['nama'];
+}
+
+$dataLimitPerPage = 10;
+$dataTotal = count($riwayatBuku);
+$pageTotal = ceil($dataTotal / $dataLimitPerPage);
+$activePage = (isset($_GET['page'])) ? $_GET['page'] : 1;
+$dataStart = ($dataLimitPerPage * $activePage) - $dataLimitPerPage;
+$daftarRiwayat = query("SELECT * FROM peminjaman WHERE id_user='{$user['id']}' AND status_peminjaman ='dikembalikan' LIMIT $dataStart, $dataLimitPerPage");
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,45 +76,44 @@ if(!isset($_SESSION["login"])){
                 </tr>
             </thead>
             <tbody>
-                <!-- Data peminjaman -->
-                <tr>
-                    <td>1</td>
-                    <td>Harry Potter and the Philosopher's Stone</td>
-                    <td>2023-05-15</td>
-                    <td>2023-05-30</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>To Kill a Mockingbird</td>
-                    <td>2023-04-20</td>
-                    <td>2023-05-05</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>The Great Gatsby</td>
-                    <td>2023-03-10</td>
-                    <td>2023-03-25</td>
-                </tr>
-                <!-- End of data peminjaman -->
+        <?php $i = 1; $index = 0; ?>
+        <!-- Data peminjaman -->
+        <?php foreach($daftarRiwayat as $riwayatList) :?>
+        <tr>
+            <td><?= $i ?></td>
+            <td><?= $arrBook[$index] ?></td>
+            <td><?= $riwayatList['tgl_pinjam'] ?></td>
+            <td><?= $riwayatList['tgl_kembalian'] ?></td>
+        </tr>
+        <?php $i++; $index++; ?>
+        <?php endforeach;?>
+        <!-- End of data peminjaman -->
             </tbody>
         </table>
 
         <!-- Pagination -->
-        <nav aria-label="Page navigation">
-            <ul class="pagination">
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
+        
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <?php if ($activePage > 1) : ?>
+                    <li class="page-item">
+                        <a class="page-link" href="?page=<?= $activePage - 1; ?>" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                <?php endif; ?>
+                <?php for ($i = 1; $i <= $pageTotal; $i++) : ?>
+                    <li class="page-item <?php if ($i == $activePage) echo 'active'; ?>">
+                        <a class="page-link" href="?page=<?= $i; ?>"><?= $i ?></a>
+                    </li>
+                <?php endfor; ?>
+                <?php if ($activePage < $pageTotal) : ?>
+                    <li class="page-item">
+                        <a class="page-link" href="?page=<?= $activePage + 1; ?>" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                <?php endif; ?>
             </ul>
         </nav>
     </div>

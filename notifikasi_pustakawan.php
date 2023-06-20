@@ -43,7 +43,7 @@ foreach($idUserPengembalian as $idUserPengembalianList){
     $namaUserPb =  query("SELECT nama FROM user WHERE id = '$idUserPb'")[0];
     $saveIdUserPb = query("SELECT * FROM user WHERE id ='$idUser'")[0];
     $arrIdUserPengembalian[] = $saveIdUserPb['id'];
-    $arrNamaPengembalian[] =  $nameUserPb['nama'];
+    $arrNamaPengembalian[] =  $namaUserPb['nama'];
 }
 //Ambil data buku
 $arrBukuPengembalian = [];
@@ -109,6 +109,7 @@ foreach($notifPengembalian as $idBukuListPengembalian){
 
     <ul style="list-style: none;">
     <?php $i = 0;?>
+    <?php $j = 0;?>
     <?php foreach($notifPeminjaman as $notif) :?>
 <li><div class="nobar">
     <div class="notext"><a href="informasi_mhs.php?id=<?=$arrIdUser[$i];?>"><?=$arrNama[$i];?></a> ingin meminjam buku <?= $arrBuku[$i]; ?></div>
@@ -116,6 +117,14 @@ foreach($notifPengembalian as $idBukuListPengembalian){
     <a href="reject_book.php?id=<?=$notif['id_pinjam']?>"><button class="btn btn-danger">Reject</button></a></div>
 </div>
 <?php $i++;?></li>
+<?php endforeach;?>
+    <?php foreach($notifPengembalian as $notif) :?>
+<li><div class="nobar">
+    <div class="notext"><a href="informasi_mhs.php?id=<?=$arrIdUserPengembalian[$j];?>"><?=$arrNamaPengembalian[$j];?></a> ingin mengembalikan buku <?= $arrBukuPengembalian[$j]; ?></div>
+    <div class="nobtn"><a href="accept_return.php?id=<?=$notif['id_pinjam']?>"><button class="btn btn-success me-2">Accept</button></a>
+    <a href="reject_return.php?id=<?=$notif['id_pinjam']?>"><button class="btn btn-danger">Reject</button></a></div>
+</div>
+<?php $j++;?></li>
 <?php endforeach;?>
    
 </ul>

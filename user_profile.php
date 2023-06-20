@@ -57,7 +57,7 @@ $userPending = query("SELECT * FROM peminjaman WHERE id_user ='{$user['id']}' AN
     <!-- Card berisi Profil, History Peminjaman, dan Status -->
     <div class="pucontainer">
     <div class="card pupict">
-        <img src="img/<?=$user['foto']?>" class="card-img-top rounded-circle shadow-lg border" alt="">
+        <img src="img/<?=$user['foto']?>" class="card-img-top rounded-circle shadow shadow-info shadow-lg border" alt="">
     </div>
     <div class="card puinfocon" style="border: 0;">
         <div class="card-body puinfo">
@@ -140,7 +140,7 @@ $userPending = query("SELECT * FROM peminjaman WHERE id_user ='{$user['id']}' AN
                 <div class="puins"><?= count($userBook); ?></div>
             </div>
             <div class="pueditcon d-flex justify-content-end align-items-center">
-                <a href="user_pengembalian_buku.php?id=<?=$user['id']?>" class="btn-sm btn-primary">Info</a>
+                <a href="user_pengembalian_buku.php?id=<?=$user['id']?>" class="btn btn-primary me-3">Info</a>
             </div>
         </div>
         <div class="card-text profildiv ms-2 mt-3">
