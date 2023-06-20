@@ -16,64 +16,85 @@ if(!isset($_SESSION["login"])){
     <title>Librarow</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/user_page.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-qd7bZRcleVms1Zbjn7BA1P5O8XPBZbE0+/FzYKle5dA6ixwlgUudxtUg6Abpgy9wI/BrkHYsM6VCEud/0oWsyQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+    .card.pupict {
+        background-color: transparent;
+        border: none;
+    }
+</style>
 </head>
 
 <body style="background-color: #D0D0D0;">
-
     <!--Navbar-->
     <nav class="navbar sticky-top navbar-expand-sm navbar-dark" style="color: #D0EFFF;">
-        <div class="container-fluid ">
-            <a class="navbar-brand " href="#">LIBRAROW</a>
-            <div class="nav navbar-custom" id="navbarSupportedContent" style="color: #D0EFFF !important;">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="user_page.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="book_categories.php">Categories</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="user_profile.php">Profile</a>
-                    </li>
-                </ul>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="user_page.php"><img src="img/logo.png" alt="logo" width="30"> LIBRAROW</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                <a class="nav-link" href="user_page.php" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Home" data-bs-animation="true">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="book_categories.php" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Categories" data-bs-animation="true">Categories</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="user_profile.php" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Profile" data-bs-animation="true">Profile</a>
+                </li>
+            </ul>
             </div>
         </div>
     </nav>
 
+
     <!-- Card berisi Profil, History Peminjaman, dan Status -->
     <div class="pucontainer">
-        <div class="pupict">
-            <img src="img/orang.png" alt="">
+    <div class="card pupict">
+        <img src="img/orang.png" class="card-img-top" alt="">
+    </div>
+    <div class="card puinfocon">
+        <div class="card-body puinfo">
+            <div class="card-text profildiv">
+            <p class="card-title h5 fw-bold">Your Status:</p>
+                <p>Available</p>
+            </div>
+            <div class="card-text profildiv centering">
+                <a href="user_riwayat_peminjaman.php" class="btn btn-primary">History</a>
+            </div>
+            <div class="card-text profildiv centering">
+            <p class="card-title h5 fw-bold">Approved:</p>
+                <!-- Not accepted -->
+                <span class="badge bg-danger rounded-pill">x</span>
+
+                <!-- Accepted -->
+                <!-- <span class="bi bi-check-circle-fill text-success"></span> -->
+            </div>
+            <div class="card-text profildiv centering">
+            <p class="card-title h5 fw-bold">Pending:</p>
+                <!-- Not accepted -->
+                <!-- <span class="badge bg-danger rounded-pill">x</span> -->
+            
+                <!-- Accepted -->
+                <span class="bi bi-check-circle-fill text-success"></span>
+            </div>
         </div>
-        <div class="puinfocon">
-            <div class="puinfo">
-                <div class="profildiv">
-                    <p>your status:</p>
-                    <p>Available</p>
-                </div>
-                <div class="profildiv centering">
-                    <button style="margin-top:15%;"><a href="user_riwayat_peminjaman.php">History</a></button>
-                </div>
-                <div class="profildiv centering">
-                    <p>approved</p>
-                    <p>x</p>
-                </div>
-                <div class="profildiv centering">
-                    <p>pending</p>
-                    <p>x</p>
-                </div>
-            </div>
-            <div class="profildiv centering">
-            <a href="user_logout.php"><button style="margin-top:10%;">Logout</button></a>
-            </div>
+        <div class="card-text profildiv centering">
+            <a href="user_logout.php" class="btn btn-danger">Logout</a>
         </div>
     </div>
+</div>
+
 
     <!-- Content Writer -->
     <div class="pucontainer">
     <div class="pueditcon">
-            <a href="user_edit_profile.php">Edit Profile</a>
-            </div>
+        <a href="user_edit_profile.php">
+            <i class="bi bi-pencil"></i> Edit Profile
+        </a>
+    </div>
         <!-- Nama -->
         <div class="pubar">
             <div class="putextcon">
@@ -114,11 +135,11 @@ if(!isset($_SESSION["login"])){
                 <div class="putitle">Buku yang sedang dipinjam</div>
                 <div class="puins">None</div>
             </div>
-            <div class="pueditcon">
-            <a href="user_pengembalian_buku.php">Return Book</a>
+            <div class="pueditcon d-flex justify-content-end align-items-center">
+                <a href="user_pengembalian_buku.php" class="btn btn-primary">Return Book</a>
             </div>
         </div>
-        
+    </div>
     </div>
     <a href="notifikasi_user.php">
         <img src="img/bell.png" class="notification-icon" alt="Notification Bell">
