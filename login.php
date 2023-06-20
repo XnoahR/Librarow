@@ -47,6 +47,7 @@ if (isset($_POST["login"])) {
     <title>Librarow Login</title>
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         .logincontainer {
             display: flex;
@@ -54,6 +55,8 @@ if (isset($_POST["login"])) {
             align-items: center;
             justify-content: center;
             height: 85vh;
+            position: relative;
+            z-index: 2;
         }
 
         .title {
@@ -73,26 +76,23 @@ if (isset($_POST["login"])) {
             margin-left: 0px;
         }
 
-        .circles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        .circles-container {
+        .background-animation {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1;
-            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
         }
 
-        .circles li {
+        .background-animation li {
             position: absolute;
             display: block;
             list-style: none;
@@ -103,14 +103,14 @@ if (isset($_POST["login"])) {
             bottom: -150px;
         }
 
-        .circles li:nth-child(1) {
+        .background-animation li:nth-child(1) {
             left: 25%;
             width: 80px;
             height: 80px;
             animation-delay: 0s;
         }
 
-        .circles li:nth-child(2) {
+        .background-animation li:nth-child(2) {
             left: 10%;
             width: 20px;
             height: 20px;
@@ -118,14 +118,14 @@ if (isset($_POST["login"])) {
             animation-duration: 12s;
         }
 
-        .circles li:nth-child(3) {
+        .background-animation li:nth-child(3) {
             left: 70%;
             width: 20px;
             height: 20px;
             animation-delay: 4s;
         }
 
-        .circles li:nth-child(4) {
+        .background-animation li:nth-child(4) {
             left: 40%;
             width: 60px;
             height: 60px;
@@ -133,28 +133,28 @@ if (isset($_POST["login"])) {
             animation-duration: 18s;
         }
 
-        .circles li:nth-child(5) {
+        .background-animation li:nth-child(5) {
             left: 65%;
             width: 20px;
             height: 20px;
             animation-delay: 0s;
         }
 
-        .circles li:nth-child(6) {
+        .background-animation li:nth-child(6) {
             left: 75%;
             width: 110px;
             height: 110px;
             animation-delay: 3s;
         }
 
-        .circles li:nth-child(7) {
+        .background-animation li:nth-child(7) {
             left: 35%;
             width: 150px;
             height: 150px;
             animation-delay: 7s;
         }
 
-        .circles li:nth-child(8) {
+        .background-animation li:nth-child(8) {
             left: 50%;
             width: 25px;
             height: 25px;
@@ -162,7 +162,7 @@ if (isset($_POST["login"])) {
             animation-duration: 45s;
         }
 
-        .circles li:nth-child(9) {
+        .background-animation li:nth-child(9) {
             left: 20%;
             width: 15px;
             height: 15px;
@@ -170,7 +170,7 @@ if (isset($_POST["login"])) {
             animation-duration: 35s;
         }
 
-        .circles li:nth-child(10) {
+        .background-animation li:nth-child(10) {
             left: 85%;
             width: 150px;
             height: 150px;
@@ -178,78 +178,42 @@ if (isset($_POST["login"])) {
             animation-duration: 11s;
         }
 
-        .logo {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .animate__animated {
-            animation-duration: 1s;
-        }
-
-        .animate__rotateIn {
-            animation-name: rotateIn;
-            animation-duration: 2s;
-            animation-iteration-count: infinite;
-        }
-
-        @keyframes rotateIn {
+        @keyframes animate {
             0% {
-                transform: rotate(0deg);
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+                border-radius: 0;
             }
 
             100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        .loader {
-            width: 150px;
-            height: 150px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .loader_cube {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 30px;
-        }
-
-        .loader_cube--glowing {
-            z-index: 2;
-            background-color: rgba(255, 255, 255, 0.2);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .loader_cube--color {
-            z-index: 1;
-            filter: blur(2px);
-            background: linear-gradient(135deg, #1afbf0, #da00ff);
-            animation: loadtwo 2.5s ease-in-out infinite;
-        }
-
-        @keyframes loadtwo {
-            50% {
-                transform: rotate(-80deg);
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+                border-radius: 50%;
             }
         }
     </style>
 </head>
 
 <body>
+    <div class="background-animation">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
     <div class="logincontainer">
         <div class="loader">
             <div class="circle">
                 <div class="logo">
-                    <div class="loader_cube loader_cube--color"></div>
-                    <div class="loader_cube loader_cube--glowing">
-                        <img src="img/logo.png" width="80" alt="logo" class="animate__animated animate__rotateIn">
-                    </div>
+                    <img src="img/logo.png" width="30" alt="logo" class="animate__animated animate__rotateIn">
                 </div>
             </div>
         </div>
@@ -274,24 +238,10 @@ if (isset($_POST["login"])) {
                 <input type="checkbox" checked="checked" name="remember" id="remember" class="form-check-input">
                 <label for="remember" class="form-check-label">Remember me</label>
             </div>
-            <button type="submit" name="login" class="btn btn-primary">Login</button>
+        <button type="submit" name="login" class="btn btn-primary animated infinite pulse">Login</button>
         </form>
         <a href="register.php">Sign up</a>
         <a href="#" class="forgot-password">Forgot password?</a>
-    </div>
-    <div class="circles-container">
-        <ul class="circles">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
