@@ -76,6 +76,50 @@ function upload(){
     move_uploaded_file($fileTmp,'img/'.$fileNewName);
     return $fileNewName;
 }
+function uploadUser(){
+    $fileName = $_FILES['foto']['name'];
+    $fileSize = $_FILES['foto']['size'];
+    $fileError = $_FILES['foto']['error'];
+    $fileTmp = $_FILES['foto']['tmp_name'];
+
+    //file upload check 
+    if($fileError === 4){
+        echo "<script>
+        alert('Upload gambar dahulu!');
+        </script>
+        ";
+        return false;
+    }
+    //img file only
+    $validFileExtension = ['jpg','jpeg','png'];
+    $fileExtension = explode('.',$fileName);
+    $fileExtension = strtolower(end($fileExtension));
+    if(!in_array($fileExtension,$validFileExtension)){
+        echo "<script>
+        alert('Tipe File salah!');
+        </script>
+        ";
+        return false;
+    }
+
+    //file size limit
+    if($fileSize > 3145728){
+        echo "<script>
+        alert('File max 3MB!');
+        </script>
+        ";
+        return false;
+    }
+
+    //New file name
+    $fileNewName = uniqid();
+    $fileNewName .= '.';
+    $fileNewName .= $fileExtension;
+
+    //file success
+    move_uploaded_file($fileTmp,'img/'.$fileNewName);
+    return $fileNewName;
+}
 
 
 function change($data){
@@ -104,6 +148,35 @@ function change($data){
     mysqli_query($conn,$query);
 
     return mysqli_affected_rows($conn);
+}
+
+function ChangeUserProfile($data){
+    global $conn;
+    $id = $data['id'];
+    $nama = htmlspecialchars($data['nama']);
+    $nim = htmlspecialchars($data['nim']);
+    $password = htmlspecialchars($data['password']);
+    $email = htmlspecialchars($data['email']);
+    $nohp = htmlspecialchars($data['nohp']);
+    $fotoLama = htmlspecialchars($data['fotoLama']);
+
+    if($_FILES['foto']['error'] === 4){
+        $foto = $fotoLama;
+    }
+    else{
+        $foto = uploadUser();
+    }
+    $query = "UPDATE user SET 
+    nama = '$nama',
+    nim = '$nim',
+    password = '$password',
+    email = '$email',
+    nohp = '$nohp',
+    foto = '$foto'
+    WHERE id = '$id'";
+mysqli_query($conn,$query);
+
+return mysqli_affected_rows($conn);
 }
 
 function deleteb($id){
