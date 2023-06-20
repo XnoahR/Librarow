@@ -238,7 +238,7 @@ if (isset($_POST["login"])) {
                 <input type="checkbox" checked="checked" name="remember" id="remember" class="form-check-input">
                 <label for="remember" class="form-check-label">Remember me</label>
             </div>
-        <button type="submit" name="login" class="btn btn-primary animated infinite pulse">Login</button>
+            <button type="submit" name="login" class="btn btn-primary">Login</button>
         </form>
         <a href="register.php">Sign up</a>
         <a href="#" class="forgot-password">Forgot password?</a>
