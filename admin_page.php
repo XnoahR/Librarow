@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,21 +14,21 @@
 
     <!--Navbar-->
     <nav class="navbar sticky-top navbar-expand-sm navbar-dark" style="color: #D0EFFF;">
-        <div class="container-fluid ">
-            <a class="navbar-brand " href="login.php">LIBRAROW</a>
-            <div class="nav navbar-custom" id="navbarSupportedContent" style="color: #D0EFFF !important;">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="admin_page.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="profile_pustakawan.php">Profile</a>
-                    </li>
-                </ul>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="user_page.php">
+                <img src="img/logo.png" alt="logo" width="30">LIBRAROW</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                <a class="nav-link" href="admin_page.php" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Home" data-bs-animation="true">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="profile_pustakawan.php" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Profile" data-bs-animation="true">Profile</a>
+                </li>
+            </ul>
             </div>
         </div>
     </nav>
-
 
     <!-- Tab Container -->
     <div class="bookshelf">
@@ -38,7 +37,7 @@
                 <img src="img/mahasiswa.png" width="145" height="200">
             </div>
             <div class="booktitle">DATA MAHASISWA</div>
-            <div class="bookcenter"><a href="data_mahasiswa.php"><button class="button1">KLIK</button></a></div>    
+            <div class="bookcenter"><a href="data_mahasiswa.php"><button class="button1">KLIK</button></a></div>
         </div>
         <div class="bookcontainer">
             <div class="bookcenter">
@@ -60,9 +59,17 @@
             </div>
             <div class="booktitle">NOTIFIKASI</div>
             <div class="bookcenter">
-            <div class="bookcenter"><a href="notifikasi_pustakawan.php"><button class="button1">KLIK</button></a></div>
+                <a href="notifikasi_pustakawan.php"><button class="button1">KLIK</button></a>
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer-1">
+        <div class="container">
+            <p>&copy; 2023 Librarow. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>

@@ -24,59 +24,100 @@
   color: #d0efff !important;
 }
 
-.bookshelf {
-  width: 90%;
-  height: 60vh;
-  margin: auto;
-  background-color: white;
-  margin-top: 50px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+.nav-link {
+  position: relative;
+  transition: all 0.3s;
+  }
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #fff;
+  transform: scaleX(0);
+  transition: transform 0.3s;
+  }
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  }
+
+  .bookshelf {
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 .bookcontainer {
-  width: 20%;
-  height: 75%;
-
-  background-color: aliceblue;
-  display: inline-block;
-  margin: auto;
+    width: 20%;
+    height: 300px;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+    transition: transform 0.3s ease;
 }
 
-.bookcontainer .bookcenter {
-  text-align: center;
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.bookcontainer:hover {
+    transform: translateY(-5px);
 }
 
-.bookcontainer .bookcenter img {
-  max-width: 100%;
-  max-height: 100%;
+.bookcontainer img {
+    max-width: 100%;
+    max-height: 70%;
+    border-radius: 10px;
 }
 
-.bookcontainer .booktitle {
-  text-align: center;
-  font-size: large;
-  font-weight: bold;
-  margin-top: 5px;
+.booktitle {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
 .button1 {
-  width: 150px;
-  display: inline-block;
+  width: 120px;
+  padding: 8px 0;
   background: #2a9df4;
   cursor: pointer;
   border-radius: 30px;
-  border-color: #d0efff;
-  border-width: 2px;
+  border: none;
+  text-align: center;
   text-decoration: none;
   color: white;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+.button1:hover {
+  background-color: #1167b1;
+}
+
+.button1:active {
+  transform: scale(0.8);
+}
+
+.footer-1 {
+  background-color: #2a9df4;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
 /* Data */
 /* /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
