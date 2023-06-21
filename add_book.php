@@ -91,7 +91,7 @@ if (isset($_POST["submit"])) {
                         <a class="nav-link" href="admin_page.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="profile_pustakawan.php">Profile</a>
+                        <a class="nav-link" href="user_logout.php" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Logout" data-bs-animation="true">Logout</a>
                     </li>
                 </ul>
             </div>

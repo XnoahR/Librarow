@@ -45,7 +45,7 @@ foreach ($peminjaman as $kodebuku) {
                 <a class="nav-link" href="admin_page.php" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Home" data-bs-animation="true">Home</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="profile_pustakawan.php" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Profile" data-bs-animation="true">Profile</a>
+                    <a class="nav-link" href="user_logout.php" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Logout" data-bs-animation="true">Logout</a>
                 </li>
             </ul>
             </div>
