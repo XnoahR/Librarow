@@ -43,7 +43,7 @@ if (isset($_POST['cari'])) {
                         <a class="nav-link" href="admin_page.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="profile_pustakawan.php">Profile</a>
+                        <a class="nav-link" href="user_logout.php" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Logout" data-bs-animation="true">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -108,7 +108,7 @@ if (isset($_POST['cari'])) {
         <ul class="pagination justify-content-center">
             <?php if ($activePage > 1) : ?>
                 <li class="page-item"><a class="page-link" href="?page=<?= $activePage - 1; ?>">
-                        << /a>
+                        <</a>
                 </li>
             <?php endif; ?>
             <?php for ($i = 1; $i <= $pageTotal; $i++) : ?>
