@@ -4,9 +4,31 @@ include 'functions.php';
 if (isset($_POST["submit"])) {
 
     if (add($_POST) > 0) {
-        echo "<script>
-        alert('Data berhasil ditambahkan');
-        document.location.href = 'data_buku.php';
+        echo "<div class=\"position-fixed bottom-0 end-0 p-3\" style=\"z-index: 5\">
+            <div id=\"successToast\" class=\"toast show\" role=\"alert\" aria-live=\"assertive\" aria-atomic=\"true\" data-bs-autohide=\"false\">
+                <div class=\"toast-header bg-success text-white\">
+                    <strong class=\"me-auto\">Success</strong>
+                    <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"toast\" aria-label=\"Close\"></button>
+                </div>
+                <div class=\"toast-body\">
+                    Data berhasil ditambahkan.
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var successToast = new bootstrap.Toast(document.getElementById(\"successToast\"));
+                successToast.show();
+                var closeButtons = document.querySelectorAll('[data-bs-dismiss=\"toast\"]');
+                closeButtons.forEach(function(button) {
+                    button.addEventListener('click', function() {
+                        successToast.hide();
+                    });
+                });
+                successToast._element.addEventListener('hidden.bs.toast', function () {
+                    document.location.href = \"data_buku.php\";
+                });
+            });
         </script>";
     } else {
         echo "Data error";

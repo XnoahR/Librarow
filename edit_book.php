@@ -24,11 +24,13 @@ if (isset($_POST["submit"])) {
             </div>
         </div>
         <script>
-            var successToast = new bootstrap.Toast(document.getElementById("successToast"));
-            successToast.show();
-            setTimeout(function() {
-                document.location.href = "data_buku.php";
-            }, 3000);
+            document.addEventListener("DOMContentLoaded", function() {
+                var successToast = new bootstrap.Toast(document.getElementById("successToast"));
+                successToast.show();
+                setTimeout(function() {
+                    document.location.href = "data_buku.php";
+                }, 3000);
+            });
         </script>
         ';
     } else {
@@ -45,16 +47,20 @@ if (isset($_POST["submit"])) {
             </div>
         </div>
         <script>
-            var warningToast = new bootstrap.Toast(document.getElementById("warningToast"));
-            warningToast.show();
-            setTimeout(function() {
-                document.location.href = "data_buku.php";
-            }, 3000);
+            document.addEventListener("DOMContentLoaded", function() {
+                var warningToast = new bootstrap.Toast(document.getElementById("warningToast"));
+                warningToast.show();
+                setTimeout(function() {
+                    document.location.href = "data_buku.php";
+                }, 3000);
+            });
         </script>
         ';
     }
 }
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
