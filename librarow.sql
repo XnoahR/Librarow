@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 19, 2023 at 07:33 PM
+-- Generation Time: Jun 21, 2023 at 09:48 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -43,13 +43,13 @@ CREATE TABLE `buku` (
 INSERT INTO `buku` (`id`, `nama`, `pengarang`, `available`, `sampul`, `kategori`) VALUES
 (6, 'December', 'Neck Deep', 5, '648908c086017.jpg', 'Biograph'),
 (7, 'Wake Me Up When September Ends', 'Green Day', 10, '6489086b46d89.png', 'Biograph'),
-(8, 'Bored to Death', 'blink', 6, '6489083003283.jpg', 'Horror'),
-(9, 'Together for the Kids', 'blink', 5, '6489083629f7b.jpg', 'Drama'),
+(8, 'Bored to Death', 'blink', 8, '6489083003283.jpg', 'Horror'),
+(9, 'Together for the Kids', 'blink', 4, '6489083629f7b.jpg', 'Drama'),
 (10, 'Yellow', 'Gawr Gura', 4, '64890530e550a.jpg', 'Sociology'),
 (11, 'Lost Kitten', 'Ryou', 1, '6489091b38e0b.png', 'Romance'),
 (18, 'Naruto V72', 'Masashi Kishimoto', 4, 'naruto.jpg', 'Comic'),
 (19, 'NarutoL', 'Masashi Kishimoto', 5, '6488fd8b70b2e.jpg', 'Comic'),
-(21, 'Waifu', 'Ray', 4, '64890f2b6bda0.jpg', 'Romance');
+(21, 'Waifu', 'Ray', 4, '64918ee5f00d9.jpg', 'Romance');
 
 -- --------------------------------------------------------
 
@@ -64,7 +64,7 @@ CREATE TABLE `peminjaman` (
   `id_buku` int(11) NOT NULL,
   `tgl_pinjam` date DEFAULT NULL,
   `tgl_kembalian` date DEFAULT NULL,
-  `status_peminjaman` enum('pending','disetujui','ditolak','dipinjam','dikembalikan','mengembalikan') NOT NULL
+  `status_peminjaman` enum('pending','rejected','ditolak','dipinjam','dikembalikan','mengembalikan') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -72,10 +72,11 @@ CREATE TABLE `peminjaman` (
 --
 
 INSERT INTO `peminjaman` (`id_pinjam`, `id_user`, `id_pustakawan`, `id_buku`, `tgl_pinjam`, `tgl_kembalian`, `status_peminjaman`) VALUES
-(11, 3, 1, 8, '2023-06-19', '0000-00-00', 'dipinjam'),
-(12, 3, 1, 9, '0000-00-00', '0000-00-00', 'pending'),
+(11, 3, 1, 8, '2023-06-19', '2023-06-20', 'rejected'),
+(12, 3, 1, 9, '2023-06-20', '0000-00-00', 'dipinjam'),
 (13, 5, 1, 11, '0000-00-00', '0000-00-00', 'ditolak'),
-(14, 5, 1, 8, '2023-06-19', '0000-00-00', 'dipinjam');
+(14, 5, 1, 8, '2023-06-19', '0000-00-00', 'dipinjam'),
+(16, 3, 1, 8, '0000-00-00', '0000-00-00', 'pending');
 
 -- --------------------------------------------------------
 
@@ -123,7 +124,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `nama`, `email`, `nohp`, `nim`, `status`, `foto`) VALUES
-(3, 'ray', 'chi', 'Rio', 'rio.ae23@gmail.com', '', '', 'aktif', '64890530e550a.jpg'),
+(3, 'ray', 'chi', 'Rio', 'rio.ae23@gmail.com', '085331886336', 'M0521065', 'aktif', '649191aa09e77.jpg'),
 (4, 'zzz', 'kkk', 'xyz', '', '', '', 'aktif', NULL),
 (5, 'luthor', 'anjay', 'lex', '', '', '', 'aktif', '');
 
@@ -173,7 +174,7 @@ ALTER TABLE `buku`
 -- AUTO_INCREMENT for table `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  MODIFY `id_pinjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_pinjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `pustakawan`
