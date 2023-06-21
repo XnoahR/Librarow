@@ -189,7 +189,7 @@ foreach ($notifPengembalianDireject as $idBukuList) {
         <?php foreach ($notifPengembalianDireject as $notif) : ?>
             <li>
                 <div class="nobarditolak">
-                    <div class="notext">Permintaan pengembalian buku <?= $arrBukuDireject[$n]; ?> ditolak oleh admin.</div>
+                    <div class="notext">Permintaan pengembalian buku<?= $arrBukuDireject[$n]; ?> ditolak oleh admin.</div>
                     <div class="nobtn"><a href="return_book.php?id=<?=$notif['id_pinjam']?>" onclick="return confirm('request kembalikan ulang?')"><button class="btn btn-info">Coba lagi</button></a></div>
                 </div>
                 <?php $n++; ?>
