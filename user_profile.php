@@ -143,7 +143,7 @@ $userPending = query("SELECT * FROM peminjaman WHERE id_user ='{$user['id']}' AN
                 <a href="user_pengembalian_buku.php?id=<?=$user['id']?>" class="btn btn-primary me-3">Info</a>
             </div>
         </div>
-        <div class="card-text profildiv ms-2 mt-3">
+        <div class="card-text profildiv ms-2 mt-3" style="padding-bottom: 3em;">
             <a href="user_logout.php" class="btn btn-danger">Logout</a>
         </div>
     </div>
