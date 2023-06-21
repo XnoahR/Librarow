@@ -54,8 +54,9 @@ foreach($notifPengembalian as $idBukuListPengembalian){
 }
 
 ?>
+
 <!DOCTYPE html>
-<html lang="en">    
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -83,53 +84,88 @@ foreach($notifPengembalian as $idBukuListPengembalian){
         .hidden {
             display: none;
         }
+
+        .label-peminjaman {
+            background-color: #ffc107;
+            color: #fff;
+            padding: 3px 6px;
+            font-size: 24px;
+            border-radius: 4px;
+        }
+
+        .label-pengembalian {
+            background-color: #17a2b8;
+            color: #fff;
+            padding: 3px 6px;
+            font-size: 24px;
+            border-radius: 4px;
+        }
     </style>
 </head>
 
 <body style="background-color: #D0D0D0;">
 
     <!-- Navbar -->
-    <nav class="navbar sticky-top navbar-expand-sm navbar-dark" style="color: #D0EFFF;">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">LIBRAROW</a>
-            <div class="nav navbar-custom" id="navbarSupportedContent" style="color: #D0EFFF !important;">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="admin_page.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="profile_pustakawan.php">Profile</a>
-                    </li>
-                </ul>
-            </div>
+    <nav class="navbar sticky-top navbar-expand-sm navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="user_page.php">
+                <img src="img/logo.png" alt="logo" width="30" class="me-2">LIBRAROW
+            </a>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="admin_page.php" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                        title="Home" data-bs-animation="true">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile_pustakawan.php" data-bs-toggle="tooltip"
+                        data-bs-placement="bottom" title="Profile" data-bs-animation="true">Profile</a>
+                </li>
+            </ul>
         </div>
     </nav>
 
-    
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h4 class="label-peminjaman">Daftar Peminjaman</h4>
+                <?php $i = 0; ?>
+                <?php foreach ($notifPeminjaman as $notif) : ?>
+                    <div class="card notification-card">
+                        <div class="card-body">
+                            <p><a href="informasi_mhs.php?id=<?= $arrIdUser[$i]; ?>"><?= $arrNama[$i]; ?></a> ingin meminjam buku <?= $arrBuku[$i]; ?></p>
+                            <div class="text-end">
+                                <a href="accept_book.php?id=<?= $notif['id_pinjam'] ?>" class="btn btn-success me-2">Accept</a>
+                                <a href="reject_book.php?id=<?= $notif['id_pinjam'] ?>" class="btn btn-danger">Reject</a>
+                            </div>
+                        </div>
+                    </div>
+                    <?php $i++; ?>
+                <?php endforeach; ?>
+            </div>
+            <div class="col-md-6">
+                <h4 class="label-pengembalian">Daftar Pengembalian</h4>
+                <?php $j = 0; ?>
+                <?php foreach ($notifPengembalian as $notif) : ?>
+                    <div class="card notification-card">
+                        <div class="card-body">
+                            <div>Pengembalian</div>
+                            <p><a href="informasi_mhs.php?id=<?= $arrIdUserPengembalian[$j]; ?>"><?= $arrNamaPengembalian[$j]; ?></a> ingin mengembalikan buku <?= $arrBukuPengembalian[$j]; ?></p>
+                            <div class="text-end">
+                                <a href="accept_return.php?id=<?= $notif['id_pinjam'] ?>" class="btn btn-success me-2">Accept</a>
+                                <a href="reject_return.php?id=<?= $notif['id_pinjam'] ?>" class="btn btn-danger">Reject</a>
+                            </div>
+                        </div>
+                    </div>
+                    <?php $j++; ?>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
 
-    <ul style="list-style: none;">
-    <?php $i = 0;?>
-    <?php $j = 0;?>
-    <?php foreach($notifPeminjaman as $notif) :?>
-<li><div class="nobar">
-    <div class="notext"><a href="informasi_mhs.php?id=<?=$arrIdUser[$i];?>"><?=$arrNama[$i];?></a> ingin meminjam buku <?= $arrBuku[$i]; ?></div>
-    <div class="nobtn"><a href="accept_book.php?id=<?=$notif['id_pinjam']?>"><button class="btn btn-success me-2">Accept</button></a>
-    <a href="reject_book.php?id=<?=$notif['id_pinjam']?>"><button class="btn btn-danger">Reject</button></a></div>
-</div>
-<?php $i++;?></li>
-<?php endforeach;?>
-    <?php foreach($notifPengembalian as $notif) :?>
-<li><div class="nobar">
-    <div class="notext"><a href="informasi_mhs.php?id=<?=$arrIdUserPengembalian[$j];?>"><?=$arrNamaPengembalian[$j];?></a> ingin mengembalikan buku <?= $arrBukuPengembalian[$j]; ?></div>
-    <div class="nobtn"><a href="accept_return.php?id=<?=$notif['id_pinjam']?>"><button class="btn btn-success me-2">Accept</button></a>
-    <a href="reject_return.php?id=<?=$notif['id_pinjam']?>"><button class="btn btn-danger">Reject</button></a></div>
-</div>
-<?php $j++;?></li>
-<?php endforeach;?>
-   
-</ul>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
 
-
+</html>
 
 
 
@@ -184,6 +220,3 @@ foreach($notifPengembalian as $idBukuListPengembalian){
             showLessButton.classList.add('hidden');
         });
     </script> -->
-</body>
-
-</html>
