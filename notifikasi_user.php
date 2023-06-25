@@ -88,26 +88,6 @@ foreach ($notifPengembalianDireject as $idBukuList) {
     <title>Librarow - User Notification</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/user_page.css">
-    <!-- <style>
-        .notification-card {
-            background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-
-        .show-more-button,
-        .show-less-button {
-            cursor: pointer;
-            color: blue;
-            text-decoration: underline;
-        }
-
-        .hidden {
-            display: none;
-        }
-    </style> -->
 </head>
 
 <body style="background-color: #D0D0D0;">
@@ -205,27 +185,3 @@ foreach ($notifPengembalianDireject as $idBukuList) {
 </body>
 
 </html>
-
-
-    <!-- <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const showMoreButton = document.querySelector('.show-more-button');
-        const showLessButton = document.querySelector('.show-less-button');
-        const hiddenCards = document.querySelectorAll('.notification-card.hidden');
-
-        showMoreButton.addEventListener('click', function() {
-            hiddenCards.forEach(card => {
-                card.classList.remove('hidden');
-            });
-            showMoreButton.classList.add('hidden');
-            showLessButton.classList.remove('hidden');
-        });
-
-        showLessButton.addEventListener('click', function() {
-            hiddenCards.forEach(card => {
-                card.classList.add('hidden');
-            });
-            showMoreButton.classList.remove('hidden');
-            showLessButton.classList.add('hidden');
-        });
-    </script> -->

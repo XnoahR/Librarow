@@ -7,6 +7,7 @@ if(!isset($_SESSION["admin"])){
 } 
 $pustakawan = query("SELECT * FROM pustakawan");
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,11 +46,6 @@ $pustakawan = query("SELECT * FROM pustakawan");
                         Data Admin
                     </div>
                     <div class="card-body">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">Search</span>
-                            <input type="text" class="form-control" name="search" id="search">
-                        </div>
-
                         <table class="table table-bordered table-striped">
                             <thead class="table-primary">
                                 <tr>
