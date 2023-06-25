@@ -241,7 +241,6 @@ if (isset($_POST["login"])) {
             <button type="submit" name="login" class="btn btn-primary">Login</button>
         </form>
         <a href="register.php">Sign up</a>
-        <a href="#" class="forgot-password">Forgot password?</a>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

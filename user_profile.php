@@ -36,7 +36,8 @@ $userPending = query("SELECT * FROM peminjaman WHERE id_user ='{$user['id']}' AN
     <!--Navbar-->
     <nav class="navbar sticky-top navbar-expand-sm navbar-dark" style="color: #D0EFFF;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="user_page.php"><img src="img/logo.png" alt="logo" width="30"> LIBRAROW</a>
+            <a class="navbar-brand" href="user_page.php">
+                <img src="img/logo.png" alt="logo" width="30">LIBRAROW</a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
@@ -47,6 +48,9 @@ $userPending = query("SELECT * FROM peminjaman WHERE id_user ='{$user['id']}' AN
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="user_profile.php" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Profile" data-bs-animation="true">Profile</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="user_logout.php" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Logout" data-bs-animation="true">Logout</a>
                 </li>
             </ul>
             </div>
@@ -69,7 +73,7 @@ $userPending = query("SELECT * FROM peminjaman WHERE id_user ='{$user['id']}' AN
                 <a href="user_riwayat_peminjaman.php" class="btn btn-primary">History</a>
             </div>
             <div class="card-text profildiv centering">
-            <p class="card-title h5 fw-bold">Approved:</p>
+            <p class="card-title h5 fw-bold">Pending:</p>
                 <!-- Not accepted -->
                 <span class="badge bg-danger rounded-pill"><?= count($userPending) ?></span>
 
@@ -77,7 +81,7 @@ $userPending = query("SELECT * FROM peminjaman WHERE id_user ='{$user['id']}' AN
                 <!-- <span class="bi bi-check-circle-fill text-success"></span> -->
             </div>
             <div class="card-text profildiv centering">
-            <p class="card-title h5 fw-bold">Pending:</p>
+            <p class="card-title h5 fw-bold">Approved:</p>
                 <!-- Not accepted -->
                 <!-- <span class="badge bg-danger rounded-pill">x</span> -->
             
@@ -143,8 +147,8 @@ $userPending = query("SELECT * FROM peminjaman WHERE id_user ='{$user['id']}' AN
                 <a href="user_pengembalian_buku.php?id=<?=$user['id']?>" class="btn btn-primary me-3">Info</a>
             </div>
         </div>
-        <div class="card-text profildiv ms-2 mt-3" style="padding-bottom: 3em;">
-            <a href="user_logout.php" class="btn btn-danger">Logout</a>
+        <div class="pubar" style="background-color: #D0D0D0;">
+
         </div>
     </div>
     </div>

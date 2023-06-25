@@ -112,7 +112,7 @@ foreach ($notifPengembalianDireject as $idBukuList) {
 
 <body style="background-color: #D0D0D0;">
 
-    <!-- Navbar -->
+    <!--Navbar-->
     <nav class="navbar sticky-top navbar-expand-sm navbar-dark" style="color: #D0EFFF;">
         <div class="container-fluid">
             <a class="navbar-brand" href="user_page.php">
@@ -127,6 +127,9 @@ foreach ($notifPengembalianDireject as $idBukuList) {
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="user_profile.php" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Profile" data-bs-animation="true">Profile</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="user_logout.php" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Logout" data-bs-animation="true">Logout</a>
                 </li>
             </ul>
             </div>

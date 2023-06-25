@@ -57,7 +57,8 @@ if(isset($_POST['submit'])){
     <!--Navbar-->
     <nav class="navbar sticky-top navbar-expand-sm navbar-dark" style="color: #D0EFFF;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="user_page.php"><img src="img/logo.png" alt="logo" width="30"> LIBRAROW</a>
+            <a class="navbar-brand" href="user_page.php">
+                <img src="img/logo.png" alt="logo" width="30">LIBRAROW</a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
@@ -68,6 +69,9 @@ if(isset($_POST['submit'])){
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="user_profile.php" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Profile" data-bs-animation="true">Profile</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="user_logout.php" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Logout" data-bs-animation="true">Logout</a>
                 </li>
             </ul>
             </div>

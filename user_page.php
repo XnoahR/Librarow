@@ -76,6 +76,9 @@ $bukuAcak = query("SELECT * FROM buku ORDER BY RAND() LIMIT 5");
                 <li class="nav-item">
                 <a class="nav-link" href="user_profile.php" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Profile" data-bs-animation="true">Profile</a>
                 </li>
+                <li class="nav-item">
+                <a class="nav-link" href="user_logout.php" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Logout" data-bs-animation="true">Logout</a>
+                </li>
             </ul>
             </div>
         </div>

@@ -32,6 +32,7 @@ if(isset($_POST['submit'])){
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Librarow</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/user_page.css">
   <style>
     body {
       background-color: #D0D0D0;
@@ -41,29 +42,29 @@ if(isset($_POST['submit'])){
 </head>
 
 <body>
-  <!-- Navbar -->
-  <nav class="navbar sticky-top navbar-expand-sm navbar-dark bg-primary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="user_page.php"><img src="img/logo.png" alt="logo" width="30"> LIBRAROW</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="user_page.php">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="book_categories.php">Categories</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="user_profile.php">Profile</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
+    <!--Navbar-->
+    <nav class="navbar sticky-top navbar-expand-sm navbar-dark" style="color: #D0EFFF;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="user_page.php">
+                <img src="img/logo.png" alt="logo" width="30">LIBRAROW</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                <a class="nav-link" href="user_page.php" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Home" data-bs-animation="true">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="book_categories.php" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Categories" data-bs-animation="true">Categories</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="user_profile.php" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Profile" data-bs-animation="true">Profile</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="user_logout.php" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Logout" data-bs-animation="true">Logout</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
   <!-- Form Content -->
   <div class="container mt-5">
     <div class="row justify-content-center">
