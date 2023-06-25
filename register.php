@@ -1,25 +1,36 @@
 <?php
 include 'functions.php';
 
-
-
 if(isset($_POST["register"])){
     $name = $_POST["name"];
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    if(register($_POST) > 0){
-        echo "<script>
-        alert('Account Created!');
-        </script>";
-    }
-    else{
-        echo "<script>
-        alert('System Error!');
-        </script>";   
+    // Validasi password
+    $lowercaseRegex = '/^(?=.*[a-z])/';
+    $uppercaseRegex = '/^(?=.*[A-Z])/';
+    $numericRegex = '/^(?=.*\d)/';
+    $lengthRegex = '/^(?=.{8,})/';
+
+    if (!preg_match($lowercaseRegex, $password) || !preg_match($uppercaseRegex, $password) || !preg_match($numericRegex, $password) || !preg_match($lengthRegex, $password)) {
+        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+            Password must contain at least one lowercase letter, one uppercase letter, one numeric digit, and be at least 8 characters long.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>';
+    } else {
+        if(register($_POST) > 0){
+            echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                Account Created!
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>';
+        } else {
+            echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                System Error!
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>';   
+        }
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -175,6 +186,27 @@ if(isset($_POST["register"])){
 </head>
 
 <body>
+<script>
+        function validatePassword() {
+            var password = document.getElementById("password").value;
+
+            var lowercaseRegex = /^(?=.*[a-z])/;
+            var uppercaseRegex = /^(?=.*[A-Z])/;
+            var numericRegex = /^(?=.*\d)/;
+            var lengthRegex = /^(?=.{8,})/;
+
+            if (!lowercaseRegex.test(password) || !uppercaseRegex.test(password) || !numericRegex.test(password) || !lengthRegex.test(password)) {
+                var alertDiv = '<div class="alert alert-danger alert-dismissible fade show" role="alert">' +
+                    'Password must contain at least one lowercase letter, one uppercase letter, one numeric digit, and be at least 8 characters long.' +
+                    '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
+                    '</div>';
+                document.getElementById("alert-container").innerHTML = alertDiv;
+                return false;
+            }
+
+            return true;
+        }
+    </script>
     <div class="background-animation">
         <ul>
             <li></li>
